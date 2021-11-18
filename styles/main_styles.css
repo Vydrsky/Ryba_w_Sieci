@@ -1,0 +1,33 @@
+body{
+    margin: 0px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+
+header{
+    min-height: 15em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#header-image,
+#header-title{
+    margin: auto;
+    width: 20%;
+    text-align: left;
+    font-size: 10vw;
+    font-weight: bold;
+}
+
+#header-title{
+    width: 60%;
+}
+ 
