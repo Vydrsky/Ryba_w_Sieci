@@ -31,10 +31,12 @@
                 <img src="images/sklep-link.jpg" />
                 <div class="link-description">ZAKUP SPRZĘTU</div>
             </div>
-            <div class="site-link">
-                <img src="images/konkursy-link.jpg" />
-                <div class="link-description">ZAWODY WĘDKARSKIE</div>
-            </div>
+            <a href="https://youtu.be/na3rrDB8MIA" target="_blank">
+                <div class="site-link">
+                    <img src="images/konkursy-link.jpg" />
+                    <div class="link-description">ZAWODY WĘDKARSKIE</div>
+                </div>
+            </a>
 
             <div class="site-link">
                 <img src="images/borrow-link.jpg" />
