@@ -32,24 +32,32 @@
                 <div class="link-description">SPRZĘT WĘDKARSKI</div>
             </div>
             <div class="site-link">
-                
+                <img src="images/konkursy-link.jpg"/>
+                <div class="link-description">ZAWODY WĘDKARSKIE</div>
             </div>
             <div class="site-link">
-                
+                <img src="images/info-link.jpg"/>
+                <div class="link-description">GALERIA ZDOBYCZY UŻYTKOWNIKÓW</div>
             </div>
-            <div class="site-link">
-                
-            </div>
+
         </div>
     </main>
-    <div id="social-media">
-    <i class="icon-facebook-squared"></i>
+    <div id="social-media-container">
+        <div id="facebook">
+            <i class="icon-facebook-squared"></i>
+        </div>
+        <div id="twitter">
     <i class="icon-twitter"></i>
+    </div>
+    <div id="instagram">
     <i class="icon-instagram"></i>
+    </div>
+    <div id="google">
     <i class="icon-gplus"></i>
     </div>
+    </div>
     <footer>
-
+        @Footer
     </footer>
 </body>
 

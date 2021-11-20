@@ -1,13 +1,15 @@
 :root{
-    --text-color: #9C0B34;      /* tu można łatwo podmienić palete */
-    --body-color: #E6E6FF;
-    --background-color: #B7B9E9;
-    --highlight-color: #AFA9D9;
+    --text-color: #E4E8E6;      /* tu można łatwo podmienić palete */
+    --body-color: #A38C76;
+    --background-color:#47111B;
+    --light-background-color:#5A4D3C;
+    --highlight-color: #2C0B11;
+    --dark-color: #0B0A09;
+
 }
 
 body{
     margin: 0px;
-    background-color: var(--body-color);
 }
 
 img {
@@ -16,12 +18,10 @@ img {
 }
 
 header{
-    margin:1rem;
     padding: 1rem;
     height: 10vw;
     overflow:hidden;
     background-color: var(--background-color);
-    border-radius: 10px;
 }
 
 .inline-header-container-left,
@@ -72,16 +72,14 @@ header{
 }
 
 .main-link:hover{
-    background-color:var(--background-color);
+    background-color:var(--highlight-color);
 }
 
 main{
-    margin: auto 1rem auto 1rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
     overflow:hidden;
-    background-color: var(--background-color);
-    border-radius: 10px;
+    background-color: var(--body-color);
 }
 
 #image-site-links{
@@ -99,19 +97,20 @@ main{
     object-fit: cover;
     width: 100%;
     height: 30vw;
-    border-radius: 20px;
-    transition: 0.5s;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
     filter: grayscale(100%);
   }
 
 .site-link{
+    position: relative;
+    display: inline-block;
     height: 30vw;
     width: 40vw;
-    transition: 1s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .site-link:hover{
-    transform: scale(1.05);
-    transition-duration: 1s;
+    transform: scale(1.02);
 }
 #image-site-links img:hover{
     transition: 0.5s;
@@ -119,8 +118,54 @@ main{
 }
 
 .link-description{
+    position: absolute;
+    top:80%;
+    right:0;
+    left:0;
     font-family: 'Roboto', sans-serif;
     font-size: 2vw;
     color: var(--text-color);
+}
+
+#social-media-container{
+    display:flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    text-align:center;
+    vertical-align: middle;
+    justify-content: space-around;
+    background-color: var(--light-background-color);
+}
+
+#facebook,
+#twitter,
+#instagram,
+#google{
+    padding: 2rem;
+    transition: 0.5s ease-in-out;
+}
+
+#facebook:hover{
+    background-color: blue;
+}
+
+#twitter:hover{
+    background-color: lightblue;
+}
+
+#instagram:hover{
+    background-color: yellow;
+}
+
+#google:hover{
+    background-color: darkorange;
+}
+
+footer{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2vw;
+    background-color: var(--dark-color);
+    color:var(--text-color);
 }
 
