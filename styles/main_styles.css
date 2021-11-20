@@ -44,8 +44,8 @@ header{
 }
 
 #header-title{
-    font-size: 7vw;
-    font-family: 'Bilbo', cursive;
+    font-size: 5vw;
+    font-family: 'Exo', sans-serif;
     font-weight: bold;
     color: var(--text-color);
     text-align: center;
@@ -59,14 +59,14 @@ header{
 }
 
 .main-link{
-    padding: 0.8rem;
-    margin: 0.5rem;
-    border-width: 0 2px 0 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-width: 0 0 0 1px;
     border-color: var(--text-color);
     color: var(--text-color);
     font-family: 'Roboto', sans-serif;
     border-style: solid;
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
 .main-link:hover{
