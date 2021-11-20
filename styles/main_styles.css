@@ -89,8 +89,9 @@ main{
     align-items: center;
     text-align:center;
     vertical-align: middle;
-    justify-content: space-around;
-    row-gap: 7rem;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 3rem;
 }
 
 #image-site-links img {
@@ -119,7 +120,7 @@ main{
 
 .link-description{
     position: absolute;
-    top:80%;
+    top:85%;
     right:0;
     left:0;
     font-family: 'Roboto', sans-serif;
