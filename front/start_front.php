@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main_styles.css" />
+    <link rel="stylesheet" href="fontello/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -42,7 +43,10 @@
         </div>
     </main>
     <div id="social-media">
-        
+    <i class="icon-facebook-squared"></i>
+    <i class="icon-twitter"></i>
+    <i class="icon-instagram"></i>
+    <i class="icon-gplus"></i>
     </div>
     <footer>
 
