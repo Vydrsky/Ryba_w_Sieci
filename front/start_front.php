@@ -24,17 +24,25 @@
             <div class="main-link">O Nas</div>
         </div>
     </header>
-    <nav>
-        
-    </nav>
-    <aside>
-
-    </aside>
     <main>
-
+        <div id = "image-site-links">
+            <div class="site-link">
+                <img src="images/sklep-link.jpg"/>
+                <div class="link-description">SPRZĘT WĘDKARSKI</div>
+            </div>
+            <div class="site-link">
+                
+            </div>
+            <div class="site-link">
+                
+            </div>
+            <div class="site-link">
+                
+            </div>
+        </div>
     </main>
     <div id="social-media">
-
+        
     </div>
     <footer>
 
