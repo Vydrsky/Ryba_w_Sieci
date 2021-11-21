@@ -33,25 +33,25 @@
     </summary>
     <main>
         <div id="image-site-links">
-            <a href="https://youtu.be/CHwjL7jVwv0" target="_blank">
+            <a href="index.php?state=shop">
                 <div class="site-link">
                     <img src="images/sklep-link.jpg" />
                     <div class="link-description">ZAKUP SPRZĘTU</div>
                 </div>
             </a>
-            <a href="https://youtu.be/na3rrDB8MIA" target="_blank">
+            <a href="https://youtu.be/na3rrDB8MIA">
                 <div class="site-link">
                     <img src="images/konkursy-link.jpg" />
                     <div class="link-description">ZAWODY WĘDKARSKIE</div>
                 </div>
             </a>
-            <a href="https://www.youtube.com/watch?v=qKxfWd79HFI" target="_blank">
+            <a href="https://www.youtube.com/watch?v=qKxfWd79HFI">
                 <div class="site-link">
                     <img src="images/borrow-link.jpg" />
                     <div class="link-description">WYPOŻYCZANIE SPRZĘTU</div>
                 </div>
             </a>
-            <a href="https://www.youtube.com/watch?v=xwUe6zqHPTA" target="_blank">
+            <a href="https://www.youtube.com/watch?v=xwUe6zqHPTA">
                 <div class="site-link">
                     <img src="images/info-link.jpg" />
                     <div class="link-description">GALERIA ZDOBYCZY UŻYTKOWNIKÓW</div>
