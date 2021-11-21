@@ -6,20 +6,40 @@ main{
 }
 
 aside{
-    width:30%;
+    width:20%;
+    color: var(--text-color);
+    font-family: "Roboto",sans-serif;
 }
+
+#filter-header{
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+}
+
 #filter-form-container{
-    padding: 2rem 1rem;
+    padding: 0 1.5rem 2rem 1.5rem;
     background-color: var(--background-color);
 }
 
+#filter-form-container p{
+    margin:1rem 0 0.5rem 0;
+    font-size: 2vw;
+}
+
+#filter-form-container input{
+    margin: 0 1rem;
+}
+
 section{
-    width: 65%;
+    width: 75%;
     background-color: var(--background-color);
 }
 
 #item{
-    background-color: var(--text-color);
+    background-color: var(--light-background-color);
+    color: var(--text-color);
     margin: 1rem;
     min-height: 20vw;
 }
@@ -62,3 +82,20 @@ section{
     background-color: var(--background-color);
     text-align: center;
 }
+
+input[type=number]::-webkit-outer-spin-button,      /*usuniecie strzalek z inputu number*/
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {    /*dla firefox*/
+    -moz-appearance:textfield;
+    padding:0.2rem;
+}
+
+input[type=submit]{
+    width: 10vw;
+    height: 2vw;
+}
+

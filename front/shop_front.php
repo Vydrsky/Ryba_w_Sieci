@@ -39,6 +39,9 @@
     </nav>
     <main>
         <aside>
+            <div id="filter-header">
+                Filtrowanie Wyników
+            </div>
             <div id="filter-form-container">
                 <form method="post" action="">
                     <p>Sprzęt Rybacki:</p>
@@ -57,11 +60,11 @@
                     <input type="checkbox" name="landing-nets-checkbox" /> Podbieraki<br>
                     <p>Cena:</p>
                     <input type="number" name="min-cost" min="0" max="999999" /> - <input type="number" name="max-cost" min="0" max="999999" /><br>
-                    </p>Opcje Dostawy:</p>
+                    <p>Opcje Dostawy:</p>
                     <input type="checkbox" name="free-delivery-checkbox" /> Darmowa Dostawa<br>
                     <input type="checkbox" name="poland-delivery-checkbox" /> Dostawa z Polski<br>
-                    <input type="checkbox" name="poland-delivery-checkbox" /> Dostawa na jutro<br>
-                    <input type="submit" value="Potwierdź" />
+                    <input type="checkbox" name="tomorrow-delivery-checkbox" /> Dostawa na jutro<br><br>
+                    <input type="submit" value="Potwierdź"/>
                 </form>
             </div>
         </aside>
@@ -75,7 +78,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed velit vitae libero dignissim ornare nec et arcu. Sed enim nibh, aliquam sit amet lacinia ac, fermentum ut est. Praesent lacinia sagittis urna id semper. Mauris eget urna egestas, vulputate enim eget, ullamcorper ex. Cras quis libero congue ipsum accumsan dignissim. Aliquam erat volutpat. Integer a urna pharetra, posuere quam sed, volutpat turpis. Mauris at ultricies leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla efficitur sapien a dui blandit, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.
                     </div>
                     <div id="item-info">
-                        Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.
+                        Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.
                     </div>
                     <div id="add-to-cart">
                         Dodaj do Koszyka
@@ -83,16 +86,16 @@
                 </div>
             </div>
             <div id="item">
-                sdfgdsfgdsg
+                temp
             </div>
             <div id="item">
-                sdfgdsfgdsg
+                temp
             </div>
             <div id="item">
-                sdfgdsfgdsg
+                temp
             </div>
             <div id="item">
-                sdfgdsfgdsg
+                temp
             </div>
         </section>
     </main>
