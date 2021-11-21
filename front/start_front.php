@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main_styles.css" />
+    <link rel="stylesheet" href="styles/start_styles.css" />
     <link rel="stylesheet" href="fontello/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
@@ -14,15 +15,17 @@
 <body>
     <header>
         <div class="inline-header-container-left">
-            <div id="header-image">
-                <img src="images/logo.png" />
-            </div>
+            <a href="index.php?state=start">
+                <div id="header-image">
+                    <img src="images/logo.png" />
+                </div>
+            </a>
             <div id="header-title">RYBA-W-SIECI</div>
         </div>
         <div class="inline-header-container-right">
-            <div class="main-link">Zaloguj się</div>
-            <div class="main-link">Stwórz Konto</div>
-            <div class="main-link">O Nas</div>
+            <div class="header-link">Zaloguj się</div>
+            <div class="header-link">Stwórz Konto</div>
+            <div class="header-link">O Nas</div>
         </div>
     </header>
     <summary>

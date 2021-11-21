@@ -2,8 +2,8 @@
 
 session_start();
 define('ROOT_PATH', dirname(__FILE__));
-$logicStateArray = array('start'); //ADD NEW STATE WHEN NECESSARY
-$state = "start"; 
+$logicStateArray = array('start','shop'); //ADD NEW STATE WHEN NECESSARY
+$state = "shop"; 
 
 if (array_key_exists('state', $_GET)) {
 	if (in_array($_GET['state'], $logicStateArray)) {
