@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main_styles.css" />
-    <link rel="stylesheet" href="styles/start_styles.css" />
+    <link rel="stylesheet" href="styles/o_nas_styles.css" />
     <link rel="stylesheet" href="fontello/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
     <!-- Latest compiled and minified CSS -->
@@ -29,30 +29,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        #container h1 {
-            margin-left: 50;
-            text-align: center;
-        }
-
-
-        .container {
-            width: 600px;
-            text-align: center;
-
-        }
-
-        #carouselExampleControls {
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        #carouselExampleControls.carousel.slide {
-
-            height: 400px;
-            width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        
     </style>
 </head>
 
@@ -85,22 +62,27 @@
 
 
 
-
-            <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.034268867592!2d18.789220815929138!3d50.3286119040172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47112ded8bad65af%3A0x92bd7b7e54554b4c!2sZabrze!5e0!3m2!1spl!2spl!4v1637592958532!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div id="map-addr">
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.034268867592!2d18.789220815929138!3d50.3286119040172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47112ded8bad65af%3A0x92bd7b7e54554b4c!2sZabrze!5e0!3m2!1spl!2spl!4v1637592958532!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div id="addr">
+                    Champions SUPLE SHOP Ernest Bijak</p>
+                    </p>
+                    ADRES SKLEPU:</p>
+                    ul. Mickiewicza 27</p>
+                    15-213 Białystok</p>
+                    </p>
+                    GODZINY OTWARCIA:</p>
+                    Wtorek-Piątek: 10:30-17:30</p>
+                    Sobota: 10:00-15:00</p>
+                </div>
             </div>
-            <div id="addr">
-            Champions SUPLE SHOP Ernest Bijak
-
-            ADRES SKLEPU:
-            ul. Mickiewicza 27
-            15-213 Białystok
-
-            GODZINY OTWARCIA:
-            Wtorek-Piątek: 10:30-17:30
-            Sobota: 10:00-15:00
-            </div>        
-                    
+            <div id="text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus commodi, voluptate odio minus dignissimos qui ipsam officiis aspernatur sint cum amet nemo mollitia deserunt hic, quisquam esse, beatae impedit aut rerum dolorem vel fugiat. Facere quam iure aspernatur. Laudantium, repellat reiciendis atque eveniet eaque quibusdam suscipit, rerum perferendis aliquam mollitia facilis. Esse aperiam dolorem minus odio provident fugiat mollitia modi distinctio eveniet ipsum veniam, officiis autem quia ut ullam ipsam voluptatibus molestiae.</p>
+                Sapiente, non eaque perferendis voluptate nam aspernatur quidem odit. Ducimus debitis deleniti repellat, inventore molestias distinctio enim atque delectus error sunt, eos vitae voluptate, tempora adipisci esse. Fugiat, quos dolorum ab dignissimos illum corrupti, excepturi dolore modi sed odit perspiciatis ipsum ratione earum non veniam praesentium provident nulla ullam commodi omnis maiores doloribus neque eaque. Omnis voluptas et maxime nulla repudiandae enim, accusamus dolorum. Magni minus facere accusamus esse fuga reprehenderit.</p>
+                Facere odit ad impedit natus voluptatibus quae placeat libero alias sed necessitatibus, distinctio, eos nisi totam amet perferendis, sit numquam fugit asperiores repellendus delectus dolorem soluta magni autem voluptas? Quos eligendi iste dolor ipsum optio nihil nobis praesentium laboriosam accusamus beatae sint in minima, quod qui, tempore sapiente, quidem facilis saepe! Possimus, ad quasi. Eum labore animi at quisquam est totam, hic itaque optio minus suscipit, accusamus, assumenda pariatur? Debitis nihil ea enim laborum, fuga alias qui dolorem nesciunt! Cumque laborum aspernatur quisquam hic impedit ducimus consequuntur, iure provident, minima cupiditate ullam nulla possimus ad cum exercitationem accusamus iusto excepturi saepe. Voluptate enim, repudiandae provident itaque impedit libero praesentium eaque necessitatibus doloribus sit non officiis! Ex nihil repellendus, qui ut impedit hic sint unde, asperiores mollitia officiis molestiae magnam magni quo provident voluptates cum incidunt. Mollitia veritatis vel quidem atque esse, voluptatum optio voluptatibus culpa molestiae alias sed cum cumque provident vero aspernatur adipisci, saepe exercitationem quo, ex dolorum? A porro nisi facilis autem nemo accusamus adipisci neque quos voluptatibus, iste inventore sint dolorum hic alias fuga eligendi at magnam. Velit odio omnis ipsam, optio non voluptates sint explicabo ullam accusamus eius facere eaque quia illum porro, tempore doloribus eveniet impedit esse placeat! Eius illum laboriosam harum natus praesentium dicta, numquam, vel id quos molestias eveniet at placeat fugit, nulla laborum! Provident accusamus consequuntur excepturi exercitationem quae, repellat omnis tempore tempora, unde sint ipsam tenetur, error laborum aliquam! Iste, rerum quo autem repellat, consequatur minima, porro commodi distinctio perspiciatis explicabo nihil deleniti vel est quasi sapiente! Itaque at eum nam explicabo, possimus voluptatum voluptatibus eligendi asperiores! Similique dolorum delectus, nisi deserunt sequi quos magni rerum numquam eius nostrum perspiciatis sunt repudiandae eveniet! Temporibus asperiores aperiam non, assumenda nostrum dolorem eveniet sed nisi incidunt corrupti ratione, delectus optio quibusdam vitae consequatur doloremque deserunt a voluptatum dolorum id labore qui voluptatibus repellat similique? Modi quisquam odit corrupti dignissimos, aut enim velit itaque reprehenderit, voluptatum possimus cumque nostrum! Cum accusamus, dignissimos exercitationem enim sint, porro unde et est iste, doloremque architecto! Sint necessitatibus perferendis laborum, magni quibusdam culpa non omnis cum molestiae ratione laudantium ex impedit qui! Corrupti, provident suscipit?
+            </div>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -122,8 +104,8 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div>
 
+        </div>
 
 
 
