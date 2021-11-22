@@ -1,0 +1,28 @@
+main{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+section{
+    width: 80%;
+    background-color: var(--background-color);
+}
+
+#item{
+    background-color: var(--light-background-color);
+    color: var(--text-color);
+    margin: 1rem;
+    display: flex;
+    vertical-align: top;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#item #item-title {
+    font-size:2vw;
+    padding:1%;
+}
