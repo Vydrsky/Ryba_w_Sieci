@@ -16,10 +16,11 @@ aside{
     text-align: center;
     padding: 1.5rem;
     font-size: 1.7rem;
+    margin-bottom: 1rem;
 }
 
 #filter-form-container{
-    padding: 0 1.5rem 2rem 1.5rem;
+    padding: 1rem 1.5rem 2rem 1.5rem;
     background-color: var(--background-color);
 }
 
