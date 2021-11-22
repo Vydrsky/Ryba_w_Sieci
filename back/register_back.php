@@ -5,22 +5,9 @@ unset($_SESSION['usernameError']);
 unset($_SESSION['passError']);
 unset($_SESSION['birthDateError']);
 
-/*
-<input type="text" class="text_inputs" name="email"> <br />
-<input type="text" class="text_inputs" name="email2"><br />
-<input type="text" class="text_inputs" name="name"> <br />
-<input type="text" class="text_inputs" name="surname"><br />
-<input type="text" class="text_inputs" name="username"> <br />
-<input type="password" class="text_inputs" name="pass"><br />
-<input type="password" class="text_inputs" name="pass2"> <br />
-<input type="date" class="text_inputs" name="birthDate"><br />
-<input type="submit" value="Utwórz konto"/>
-*/
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$_SESSION['inputName'] = $_POST['name'];
 	$validationSuccess = true;
-    echo 
 	require_once "db_connect.php";
 
 	$query = $db->prepare('SELECT email,login,password,permission FROM users');
@@ -36,8 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $flagUsername=true;
         }
     }
-	if ($flagEmail) {
-		$_SESSION['emailError'] = "Istnieje już konto o takim adresie e-mail";
+	if ($flagEmail||($_POST['email']!=$_POST['email2'])) {
+		if($flagEmail){
+			$_SESSION['emailError'] = "Istnieje już konto o takim adresie e-mail";
+		}
+		else{
+			$_SESSION['emailError'] = "Adresy e-mail nie zgadzają się";
+		}
 		$validationSuccess = false;
 	} else {
 		unset($_SESSION['emailError']);
@@ -47,12 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$validationSuccess = false;
 	} else {
 		unset($_SESSION['usernameError']);
-	}
-    if ($_POST['email']!=$_POST['email2']) {
-		$_SESSION['emailError'] = "Adresy e-mail nie zgadzają się";
-		$validationSuccess = false;
-	} else {
-		unset($_SESSION['emailError']);
 	}
     if ($_POST['pass']!=$_POST['pass2']) {
 		$_SESSION['passError'] = "Hasła nie zgadzają się";

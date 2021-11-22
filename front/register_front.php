@@ -34,27 +34,20 @@
                     </div>
                 </div>
                 <div id="inputs">
-                    <input type="text" class="text_inputs" name="email"> <br />
-                    <input type="text" class="text_inputs" name="email2"><br />
-                    <input type="text" class="text_inputs" name="name"> <br />
-                    <input type="text" class="text_inputs" name="surname"><br />
-                    <input type="text" class="text_inputs" name="username"> <br />
-                    <input type="password" class="text_inputs" name="pass"><br />
-                    <input type="password" class="text_inputs" name="pass2"> <br />
-                    <input type="date" class="text_inputs" name="birthDate"><br />
+                    <input type="text" class="text_inputs" name="email" required> <br />
+                    <input type="text" class="text_inputs" name="email2" required><br />
+                    <input type="text" class="text_inputs" name="name" required> <br />
+                    <input type="text" class="text_inputs" name="surname" required><br />
+                    <input type="text" class="text_inputs" name="username" required> <br />
+                    <input type="password" class="text_inputs" name="pass" required><br />
+                    <input type="password" class="text_inputs" name="pass2" required> <br />
+                    <input type="date" class="text_inputs" name="birthDate" required><br />
                     <input type="submit" value="Utwórz konto"/>
                 </div>
-                <?php
-                if (isset($_SESSION['nameError'])) {
-                    echo "<span style='color:red;'>".$_SESSION['nameError']."</span><br>";
-                }
-                if (isset($_SESSION['passError'])) {
-                    echo "<span style='color:red;'>".$_SESSION['passError']."</span><br>";
-                }
-                if (isset($_SESSION['ageError'])) {
-                    echo "<span style='color:red;'>". $_SESSION['ageError']."</span><br>";
-                }
-                ?>
+                <?php if(isset($_SESSION['emailError'])){echo "<p color='red'>".$_SESSION['emailError']."</p>";}
+                if(isset($_SESSION['usernameError'])){echo "<p color='red'>".$_SESSION['usernameError']."</p>";}
+                if(isset($_SESSION['passError'])){echo "<p color='red'>".$_SESSION['passError']."</p>";}
+                if(isset($_SESSION['birthDateError'])){echo "<p color='red'>".$_SESSION['birthDateError']."</p>";}?>
             </fieldset>
         </form>
     </div>
