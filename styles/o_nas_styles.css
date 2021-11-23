@@ -1,5 +1,6 @@
 * {
     color: var(--text-color);
+    text-decoration: none;
 }
 
 #container h1 {
@@ -7,7 +8,14 @@
     margin-right: auto;
     text-align: center;
     padding-bottom: 2%;
-    color: var(--text-color);
+}
+
+#container {
+    padding-top: 0;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
 }
 
 #addr {
@@ -22,16 +30,6 @@ main {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
-}
-
-#container {
-    padding-top: 0;
-    margin-top: 0;
-
-    width: 100%;
-    text-align: center;
-
-    display: inline-block;
 }
 
 #carouselExampleControls {
@@ -51,9 +49,7 @@ main {
 #map-addr {
     display: flex;
     padding: 3%;
-
     width: 100%;
-
 }
 
 .map {
@@ -65,5 +61,4 @@ main {
     font-size: 1.5vw;
     text-align: center;
     width: 50%;
-    color: var(--text-color);
 }

@@ -1,3 +1,4 @@
+    
     <header>
         <div class="inline-header-container-left">
             <a href="index.php?state=start">
