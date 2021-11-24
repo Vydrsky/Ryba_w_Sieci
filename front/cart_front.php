@@ -56,11 +56,11 @@
                     <div id="item-prize">
                         17,99zł
                     </div>
-                    <a href="index.php?state=start">          
-                        <div id="delete-from-cart">
-                            <img src="images/bin.png" />
-                        </div>
-                    </a>
+                    <div id="item-trash">
+                        <a href="index.php?state=start">  
+                        <img src="images/trash.png" />
+                        </a>
+                    </div>                          
                 </div>
             </div>
             <div id="item">
@@ -80,11 +80,11 @@
                     <div id="item-prize">
                         42,33zł
                     </div>
-                    <a href="index.php?state=start">          
-                        <div id="delete-from-cart">
-                            <img src="images/bin.png" />
-                        </div>
-                    </a>
+                    <div id="item-trash">
+                        <a href="index.php?state=start">  
+                            <img src="images/trash.png" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

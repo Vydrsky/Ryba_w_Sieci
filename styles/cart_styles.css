@@ -35,7 +35,7 @@ section{
 
 #item #item-content{
     display: inline-flex;
-    width: 84%;
+    width: 68%;
     margin-left: -4px;
     vertical-align: top;
     flex-direction: row;
@@ -60,22 +60,26 @@ section{
     padding:2%;
 }
 
-#item a #delete-from-cart{
-    height:4vw;
-    display: inline-block; 
-}
-
-#item a #delete-from-cart img{
-    object-fit:contain;
-}
-
 #item #item-count input[type=number]{
+    
     text-align:center;
     width:50%;
     color: var(--dark-color);
 }
 #item #item-count input[type=submit]{
+    color: var(--text-color);
+    background-color: var(--background-color);
     text-align:center;
     width:50%;
-    color: var(--dark-color);
+}
+
+#item #item-trash{
+    display: inline-block;
+    width:12%;
+    height:2.5vw;
+    padding:2%;
+}
+
+#item #item-trash img{
+    object-fit:contain;
 }
