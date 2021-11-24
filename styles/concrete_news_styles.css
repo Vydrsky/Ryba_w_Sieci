@@ -16,13 +16,36 @@ section{
     margin: 1rem;
     display: flex;
     vertical-align: top;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
 }
 
 #item #item-title {
+    text-align: center;
+    width:50%;
     font-size:2vw;
-    padding:1%;
+    padding-top:2%;
+    word-wrap:break-word;
+}
+
+#item #item-image {
+    width:50%;
+    height:25vw;
+    padding-top:2%; 
+}
+
+#item #autor-info{
+    font-size:1vw;
+    font-weight: bold;
+    color: var(--header-color); 
+    padding-top:1%;
+}
+
+#item #item-content{
+    width:50%; 
+    word-wrap:break-word;
+    padding-top:2%;
+    padding-bottom:2%;
 }
