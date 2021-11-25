@@ -37,13 +37,14 @@ section{
 }
 
 #item #autor-info{
-    font-size:1vw;
+    font-size:1.1vw;
     font-weight: bold;
     color: var(--header-color); 
     padding-top:1%;
 }
 
 #item #item-content{
+    font-size:1vw;
     width:50%; 
     word-wrap:break-word;
     padding-top:2%;

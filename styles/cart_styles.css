@@ -44,6 +44,7 @@ section{
     align-content: center;
 }
 #item #item-info{
+    font-size:1vw;
     word-wrap:break-word;
     width:36%;
     padding:2%;
@@ -60,8 +61,7 @@ section{
     padding:2%;
 }
 
-#item #item-count input[type=number]{
-    
+#item #item-count input[type=number]{    
     text-align:center;
     width:50%;
     color: var(--dark-color);

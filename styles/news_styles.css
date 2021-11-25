@@ -47,6 +47,7 @@ section{
 
 #item #item-info{
     word-wrap:break-word;
+    font-size:1vw;
     padding:1%;
 }
 
