@@ -27,7 +27,7 @@
                     <div class="link-description">ZAKUP SPRZĘTU</div>
                 </div>
             </a>
-            <a href="https://youtu.be/na3rrDB8MIA">
+            <a href="index.php?state=zawody">
                 <div class="site-link">
                     <img src="images/konkursy-link.jpg" />
                     <div class="link-description">ZAWODY WĘDKARSKIE</div>
@@ -53,3 +53,4 @@
 </body>
 
 </html>
+
