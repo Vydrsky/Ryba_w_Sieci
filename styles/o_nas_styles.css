@@ -1,0 +1,64 @@
+* {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+#container h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+#container {
+    padding-top: 0;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+#addr {
+    padding-left: 10%;
+}
+
+main {
+    background-color: var(--highlight-color);
+}
+
+#text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#carouselExampleControls {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2%;
+}
+
+#carouselExampleControls.carousel.slide {
+
+    height: 400px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#map-addr {
+    display: flex;
+    padding: 3%;
+    width: 100%;
+}
+
+.map {
+    margin-right: 5%;
+    width: 50%;
+}
+
+#addr {
+    font-size: 1.5vw;
+    text-align: center;
+    width: 50%;
+}

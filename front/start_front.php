@@ -13,21 +13,9 @@
 </head>
 
 <body>
-    <header>
-        <div class="inline-header-container-left">
-            <a href="index.php?state=start">
-                <div id="header-image">
-                    <img src="images/logo.png" />
-                </div>
-            </a>
-            <div id="header-title">RYBA-W-SIECI</div>
-        </div>
-        <div class="inline-header-container-right">
-            <div class="header-link">Zaloguj się</div>
-            <div class="header-link">Stwórz Konto</div>
-            <div class="header-link">O Nas</div>
-        </div>
-    </header>
+    <?php
+    include "includes/header.php";
+    ?>
     <summary>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis quam quis ligula laoreet porta. Phasellus aliquet vel orci a suscipit. Vivamus aliquet, urna vitae dapibus condimentum, velit erat bibendum velit, nec dignissim libero metus et arcu. Nulla ut risus id massa imperdiet venenatis. Fusce hendrerit pretium pulvinar. Quisque sodales tincidunt arcu, ac gravida mauris vehicula sodales. Proin hendrerit egestas tortor nec rhoncus. Etiam sit amet dictum eros. Quisque sed risus id nibh interdum fringilla et et metus. Donec lorem augue, hendrerit nec ligula id, scelerisque placerat elit. Ut at nisi elementum, volutpat metus id, laoreet nunc. Aenean facilisis cursus metus sit amet laoreet. Donec bibendum, lacus non euismod vestibulum, orci velit cursus orci, sed mattis metus turpis eget neque.</p>
     </summary>
@@ -39,7 +27,7 @@
                     <div class="link-description">ZAKUP SPRZĘTU</div>
                 </div>
             </a>
-            <a href="https://youtu.be/na3rrDB8MIA">
+            <a href="index.php?state=zawody">
                 <div class="site-link">
                     <img src="images/konkursy-link.jpg" />
                     <div class="link-description">ZAWODY WĘDKARSKIE</div>
@@ -59,23 +47,10 @@
             </a>
         </div>
     </main>
-    <div id="social-media-container">
-        <div id="facebook">
-            <i class="icon-facebook-squared"></i>
-        </div>
-        <div id="twitter">
-            <i class="icon-twitter"></i>
-        </div>
-        <div id="instagram">
-            <i class="icon-instagram"></i>
-        </div>
-        <div id="google">
-            <i class="icon-gplus"></i>
-        </div>
-    </div>
-    <footer>
-        Copyright &copy; 2020 - 2021 All rights reserved
-    </footer>
+ <?php
+ include "includes/footer.php";
+ ?>
 </body>
 
 </html>
+
