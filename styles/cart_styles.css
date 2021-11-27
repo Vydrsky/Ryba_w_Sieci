@@ -1,0 +1,85 @@
+main{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+section{
+    width: 80%;
+    background-color: var(--background-color);
+}
+
+#item{
+    background-color: var(--light-background-color);
+    color: var(--text-color);
+    margin: 1rem;
+    display: flex;
+    vertical-align: top;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#item #item-image{
+    display: inline-block;
+    width:12%;
+    height:4vw;
+    padding:2%;
+}
+
+#item #item-image img{
+    object-fit:contain;
+}
+
+#item #item-content{
+    display: inline-flex;
+    width: 68%;
+    margin-left: -4px;
+    vertical-align: top;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+#item #item-info{
+    font-size:1vw;
+    word-wrap:break-word;
+    width:36%;
+    padding:2%;
+}
+
+#item #item-count{
+    width:16%;
+    padding:2%;
+}
+
+#item #item-prize{
+    font-size:1.5vw;
+    width:16%;
+    padding:2%;
+}
+
+#item #item-count input[type=number]{    
+    text-align:center;
+    width:50%;
+    color: var(--dark-color);
+}
+#item #item-count input[type=submit]{
+    color: var(--text-color);
+    background-color: var(--background-color);
+    text-align:center;
+    width:50%;
+}
+
+#item #item-trash{
+    display: inline-block;
+    width:12%;
+    height:2.5vw;
+    padding:2%;
+}
+
+#item #item-trash img{
+    object-fit:contain;
+}
