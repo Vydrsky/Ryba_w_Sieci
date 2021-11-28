@@ -32,9 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$_SESSION['userid'] = $result['id'];
 		$_SESSION['name'] = $_SESSION['inputName'];
 		$_SESSION['permission'] = $result['permission'];
-		if($_SESSION['permission'] == 'admin')
-			header("location: index.php?state=users");
-		else
-			header("location: index.php?state=books");
+		header("location: index.php?state=start");
 	}
 }
