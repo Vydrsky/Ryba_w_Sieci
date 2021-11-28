@@ -14,29 +14,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="inline-header-container-left">
-            <a href="index.php?state=start">
-                <div id="header-image">
-                    <img src="images/logo.png" />
-                </div>
-            </a>
-            <div id="header-title">RYBA-W-SIECI</div>
-        </div>
-        <div class="inline-header-container-right">
-            <div class="header-link">Zaloguj się</div>
-            <div class="header-link">Stwórz Konto</div>
-            <div class="header-link">O Nas</div>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li>Sklep</li>
-            <li>Sprzęt Używany</li>
-            <li>Galeria</li>
-            <li>Newsy</li>
-        </ul>
-    </nav>
+    <?php include "includes/header.php"; ?>
+    <?php include "includes/menu.php"; ?>
     <main>
         <section>
             <div id="item">
@@ -89,23 +68,9 @@
             </div>
         </section>
     </main>
-    <div id="social-media-container">
-        <div id="facebook">
-            <i class="icon-facebook-squared"></i>
-        </div>
-        <div id="twitter">
-            <i class="icon-twitter"></i>
-        </div>
-        <div id="instagram">
-            <i class="icon-instagram"></i>
-        </div>
-        <div id="google">
-            <i class="icon-gplus"></i>
-        </div>
-    </div>
-    <footer>
-        Copyright &copy; 2020 - 2021 All rights reserved
-    </footer>
+    <?php
+    include "includes/footer.php";
+    ?>
 </body>
 
 </html>

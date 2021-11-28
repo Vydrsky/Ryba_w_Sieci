@@ -2,7 +2,7 @@
 
 session_start();
 define('ROOT_PATH', dirname(__FILE__));
-$logicStateArray = array('start','shop','login','register','galery', 'cart', 'news', 'concrete_news','o_nas','zawody'); //ADD NEW STATE WHEN NECESSARY
+$logicStateArray = array('start','shop','login','register','galery', 'cart', 'news', 'concrete_news','o_nas','zawody', 'add_product_admin', 'add_product_user'); //ADD NEW STATE WHEN NECESSARY
 
 $state = "start"; 
 
