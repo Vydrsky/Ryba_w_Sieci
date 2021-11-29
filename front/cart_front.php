@@ -18,54 +18,37 @@
     <?php include "includes/menu.php"; ?>
     <main>
         <section>
-            <div id="item">
-                <div id="item-image">
-                    <img src="images/logo.png" />
+            <?php
+            if(isset($_SESSION['cartContents'])){
+                foreach($_SESSION['cartContents'] as $row){
+            echo
+            "<div id='item'>
+                <div id='item-image'>
+                    <img src='images/products/".$row['image']."' />
                 </div>
-                <div id="item-content">
-                    <div id="item-info">
-                        Opis
-                    </div>
-                    <div id="item-count">
-                        <form method="post" action="">
-                            <input type="number" name="selected-count-1" min="1" max="10" value="1" /> </br> 
-                            <input type="submit" value="Zmień"/>
+                <div id='item-content'>
+                    <div id='item-info'>".
+                        $row['name']
+                    ."</div>
+                    <div id='item-count'>
+                        <form method='post' action=''>
+                            <input type='number' name='selected-count-1' min='1' max='10' value='".$_SESSION['cart'][$row['id']]."' /> </br> 
+                            <input type='submit' value='Zmień'/>
                         </form>
                     </div>
-                    <div id="item-prize">
-                        17,99zł
-                    </div>
-                    <div id="item-trash">
-                        <a href="index.php?state=start">  
-                        <img src="images/trash.png" />
+                    <div id='item-prize'>".
+                        $row['prize']
+                    ."</div>
+                    <div id='item-trash'>
+                        <a href='index.php?state=start'>  
+                        <img src='images/trash.png' />
                         </a>
                     </div>                          
                 </div>
-            </div>
-            <div id="item">
-                <div id="item-image">
-                    <img src="images/logo.png" />
-                </div>
-                <div id="item-content">
-                    <div id="item-info">
-                        Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis Opis
-                    </div>
-                    <div id="item-count">
-                        <form method="post" action="">
-                            <input type="number" name="selected-count-2" min="1" max="10" value="1" /> </br>
-                            <input type="submit" value="Zmień"/>
-                        </form>
-                    </div>
-                    <div id="item-prize">
-                        42,33zł
-                    </div>
-                    <div id="item-trash">
-                        <a href="index.php?state=start">  
-                            <img src="images/trash.png" />
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </div>";
+                }
+            }
+            ?>
         </section>
     </main>
     <?php

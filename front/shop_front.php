@@ -69,34 +69,28 @@
             </div>
         </aside>
         <section>
-            <div id="item">
-                <div id="item-image">
-                    <img src="images/logo.png" />
+            <?php
+            if(isset($_SESSION['itemList'])){
+            foreach($_SESSION['itemList'] as $row){
+            echo "<div id='item'>
+                <div id='item-image'>
+                    <img src='images/products/".$row['image']."' />
                 </div>
-                <div id="item-content">
-                    <div id="item-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed velit vitae libero dignissim ornare nec et arcu. Sed enim nibh, aliquam sit amet lacinia ac, fermentum ut est. Praesent lacinia sagittis urna id semper. Mauris eget urna egestas, vulputate enim eget, ullamcorper ex. Cras quis libero congue ipsum accumsan dignissim. Aliquam erat volutpat. Integer a urna pharetra, posuere quam sed, volutpat turpis. Mauris at ultricies leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla efficitur sapien a dui blandit, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.
-                    </div>
-                    <div id="item-info">
-                        Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.Lorem ipsum dolor sit amet, id maximus urna porttitor. Mauris id mi vitae libero commodo vehicula id ac dolor.
-                    </div>
-                    <div id="add-to-cart">
+                <div id='item-content'>
+                    <div id='item-description'><h3>".
+                        $row['name']
+                    ."</h3></div>
+                    <div id='item-info'>".
+                        $row['description']."<br/>"."Cena: ".$row['prize']
+                    ."</div>
+                    <a href='index.php?state=shop&bought=".$row['id']."' id='add-to-cart'><div id='add-to-cart'>
                         Dodaj do Koszyka
-                    </div>
+                    </div></a>
                 </div>
-            </div>
-            <div id="item">
-                temp
-            </div>
-            <div id="item">
-                temp
-            </div>
-            <div id="item">
-                temp
-            </div>
-            <div id="item">
-                temp
-            </div>
+            </div>";
+            }
+            }
+            ?>
         </section>
     </main>
     <div id="social-media-container">
