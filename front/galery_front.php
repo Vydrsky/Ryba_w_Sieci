@@ -29,14 +29,9 @@
             <div class="header-link">O Nas</div>
         </div>
     </header>
-    <nav>
-        <ul>
-            <li>Sklep</li>
-            <li>Sprzęt Używany</li>
-            <li>Galeria</li>
-            <li>Newsy</li>
-        </ul>
-    </nav>
+    <?php
+    include "includes/menu.php";
+    ?>
     <main>
         <article>
             <div id="galery-item">

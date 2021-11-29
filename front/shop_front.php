@@ -14,29 +14,12 @@
 </head>
 
 <body>
-    <header>
-        <div class="inline-header-container-left">
-            <a href="index.php?state=start">
-                <div id="header-image">
-                    <img src="images/logo.png" />
-                </div>
-            </a>
-            <div id="header-title">RYBA-W-SIECI</div>
-        </div>
-        <div class="inline-header-container-right">
-            <div class="header-link">Zaloguj się</div>
-            <div class="header-link">Stwórz Konto</div>
-            <div class="header-link">O Nas</div>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li>Sklep</li>
-            <li>Sprzęt Używany</li>
-            <li>Galeria</li>
-            <li>Newsy</li>
-        </ul>
-    </nav>
+<?php
+        include "includes/header.php";
+    ?>
+    <?php
+        include "includes/menu.php";
+    ?>
     <main>
         <aside>
             <div id="filter-header">
@@ -64,31 +47,31 @@
                     <input type="checkbox" name="free-delivery-checkbox" /> Darmowa Dostawa<br>
                     <input type="checkbox" name="poland-delivery-checkbox" /> Dostawa z Polski<br>
                     <input type="checkbox" name="tomorrow-delivery-checkbox" /> Dostawa na jutro<br><br>
-                    <input type="submit" value="Potwierdź"/>
+                    <input type="submit" value="Potwierdź" />
                 </form>
             </div>
         </aside>
         <section>
             <?php
-            if(isset($_SESSION['itemList'])){
-            foreach($_SESSION['itemList'] as $row){
-            echo "<div id='item'>
+            if (isset($_SESSION['itemList'])) {
+                foreach ($_SESSION['itemList'] as $row) {
+                    echo "<div id='item'>
                 <div id='item-image'>
-                    <img src='images/products/".$row['image']."' />
+                    <img src='images/products/" . $row['image'] . "' />
                 </div>
                 <div id='item-content'>
-                    <div id='item-description'><h3>".
+                    <div id='item-description'><h3>" .
                         $row['name']
-                    ."</h3></div>
-                    <div id='item-info'>".
-                        $row['description']."<br/>"."Cena: ".$row['prize']
-                    ."</div>
-                    <a href='index.php?state=shop&bought=".$row['id']."' id='add-to-cart'><div id='add-to-cart'>
+                        . "</h3></div>
+                    <div id='item-info'>" .
+                        $row['description'] . "<br/>" . "Cena: " . $row['prize']
+                        . "</div>
+                    <a href='index.php?state=shop&bought=" . $row['id'] . "' id='add-to-cart'><div id='add-to-cart'>
                         Dodaj do Koszyka
                     </div></a>
                 </div>
             </div>";
-            }
+                }
             }
             ?>
         </section>

@@ -1,0 +1,42 @@
+section{
+    display: inline-flex;
+    vertical-align: top;
+    align-content: flex-start;
+}
+
+#profile-image{
+    padding: 1rem;
+    margin-left: 10rem;
+    width:30%;
+}
+#profile-image img{
+    object-fit: contain;
+}
+
+#profile-data{
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+article {
+    padding: 1rem;
+    margin:0 0 0 10rem;
+}
+
+#auction-container{
+    width:80%;
+    background-color: var(--background-color);
+    display:flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.auction-item{
+    background-color: var(--light-background-color);
+    width:100%;
+    padding:3rem;
+    margin: 1rem 1rem 0 1rem;
+}
+.auction-item:last-child{
+    margin-bottom:1rem;
+}

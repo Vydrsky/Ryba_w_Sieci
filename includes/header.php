@@ -18,5 +18,6 @@
             <a href="index.php?state=o_nas">
                 <div class="header-link">O Nas</div>
             </a>
+            <i class="icon-user"></i>
         </div>
     </header>
