@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
-    <link rel="stylesheet" href="styles/add_product_styles.css" />
+    <link rel="stylesheet" href="styles/add_to_gallery_styles.css" />
     <link rel="stylesheet" href="fontello/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
@@ -19,23 +19,20 @@
         <section>
             <div id="item">
                 <div id="item-title">
-                    Dodawanie produktu
+                    Dodanie do galerii
                 </div>
                 <div id="item-content">
-                <form method="post" action="index.php?state=add_product_admin" enctype="multipart/form-data">
-                    Nazwa przedmiotu </br>
-                    <input type="text" name="name" /> </br> </br>
-                    Typ </br>
-                    <input type="text" name="type" /> </br> </br>
-                    Cena </br>
-                    <input type="number" name="prize" step="0.01" min="0" /> </br> </br>
+                <form method="post" action="index.php?state=add_to_gallery" enctype="multipart/form-data">
                     Zdjęcie </br>
                     <input type="file" name="image" accept="image/png, image/jpg, image/jpeg"/> </br> </br> 
-                    <input type="submit" value="Dodaj produkt"/>
+                    Opis </br>
+                    <textarea name="description">Wpisz opis.</textarea> </br> </br>
+                    Waga zdobyczy </br>
+                    <input type="number" name="weight" step="1" min="0" /> </br> </br>                  
+                    <input type="submit" value="Dodaj zdjęcie"/>
                 </form>
-                <?php if(isset($_SESSION['errorName'])){echo $_SESSION['errorName']."</br>";}
-                if(isset($_SESSION['errorType'])){echo $_SESSION['errorType']."</br>";}
-                if(isset($_SESSION['errorImage'])){echo $_SESSION['errorImage']."</br>";} ?>
+                <?php if(isset($_SESSION['errorImage'])){echo $_SESSION['errorImage']."</br>";}
+                if(isset($_SESSION['errorDescription'])){echo $_SESSION['errorDescription']."</br>";} ?>
                 </div>
             </div>
         </section>

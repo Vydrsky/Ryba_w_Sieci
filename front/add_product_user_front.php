@@ -34,7 +34,7 @@
                     Cena </br>
                     <input type="number" name="prize" step="0.01" min="0" /> </br> </br>
                     Zdjęcie </br>
-                    <input type="file" name="image" accept="image/png, image/jpg, image/jpeg" value="Wybierz zdjęcie"/> </br> </br> 
+                    <input type="file" name="image" accept="image/png, image/jpg, image/jpeg"/> </br> </br> 
                     <input type="submit" value="Dodaj produkt"/>
                 </form>
                 <?php if(isset($_SESSION['errorName'])){echo $_SESSION['errorName']."</br>";}
