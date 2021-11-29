@@ -1,13 +1,13 @@
 <?php
 
-require_once "db_connect.php";
-include_once "News.php";
+require "db_connect.php";
+include "News.php";
 
 $query = $db->prepare('SELECT * FROM ogloszenia');
 $query->execute();
 $result = $query->fetchALL(PDO::FETCH_ASSOC);
 
-$selectNewsCount = $db->prepare('SELECT * FROM ogloszenia');
+$selectNewsCount = $db->prepare('SELECT COUNT(*) FROM ogloszenia');
 $selectNewsCount->execute();
 $_SESSION['newsCount'] = $selectNewsCount->fetchColumn();
 

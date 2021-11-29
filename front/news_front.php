@@ -18,7 +18,8 @@
     <?php include "includes/menu.php"; ?>
     <main>
         <section>
-            <?php 
+            <?php
+             
                 for($i = 0; $i<$_SESSION['newsCount']; $i++)
             {
                 $news = unserialize($_SESSION['news'][$i]);
