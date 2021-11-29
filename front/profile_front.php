@@ -62,6 +62,18 @@
                     temp
                 </div>
             </div>
+            <h2>Konkursy w których uczestniczysz</h2>
+            <div id="auction-container">
+                <div class="auction-item">
+                    temp
+                </div>
+                <div class="auction-item">
+                    temp
+                </div>
+                <div class="auction-item">
+                    temp
+                </div>
+            </div>
         </article>
     </main>
     <?php

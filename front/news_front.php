@@ -19,21 +19,20 @@
     <main>
         <section>
             <?php
-             
-                for($i = 0; $i<$_SESSION['newsCount']; $i++)
-            {
+
+            for ($i = 0; $i < $_SESSION['newsCount']; $i++) {
                 $news = unserialize($_SESSION['news'][$i]);
-                
+
                 echo "<div id='item'>";
-                    echo "<div id='item-image'> <img src='images/news/" . $news->getImage() . "'/> </div>";
-                    echo "<div id='item-content'>";
-                        echo "<div id='item-title'>" . $news->getTitle() . "</div>";
-                        echo "<div id='item-info'>" . $news->getDescription(). "</div>";
-                        echo "<div id='item-forwarding'> <a href='index.php?state=concrete_news&id=" . $_SESSION['newsId'][$i] . "'>Czytaj więcej...</a> </div>";     
-                    echo  "</div>";
+                echo "<div id='item-image'> <img src='images/news/" . $news->getImage() . "'/> </div>";
+                echo "<div id='item-content'>";
+                echo "<div id='item-title'>" . $news->getTitle() . "</div>";
+                echo "<div id='item-info'>" . $news->getDescription() . "</div>";
+                echo "<div id='item-forwarding'> <a href='index.php?state=concrete_news&id=" . $_SESSION['newsId'][$i] . "'>Czytaj więcej...</a> </div>";
+                echo  "</div>";
                 echo "</div>";
             }
-        ?>
+            ?>
         </section>
     </main>
     <?php

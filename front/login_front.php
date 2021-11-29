@@ -1,5 +1,3 @@
-
-
 <html>
 
 <head>
@@ -24,26 +22,26 @@
                     Logowanie
                 </div>
                 <div id="item-content">
-                <form method="post" action="" enctype="multipart/form-data">
-                Login </br>  
-                <input type="text"  name="name" value=<?php if (isset($_SESSION['inputName'])) echo $_SESSION['inputName']; ?>> <br /> </br>
-                    Hasło </br>
-                    <input type="password"  name="pass"><br />
-                    <input type="submit" class="btn" value="zaloguj" />
-                    
-                </form>
-                <?php
-    if (isset($_SESSION['nameError'])) {
-        echo "<span style='color:red;'>" . $_SESSION['nameError'] . "</span><br>";
-    }
-    if (isset($_SESSION['passError'])) {
-        echo "<span style='color:red;'>" . $_SESSION['passError'] . "</span><br>";
-    }
-    if (isset($_SESSION['ageError'])) {
-        echo "<span style='color:red;'>" . $_SESSION['ageError'] . "</span><br>";
-    }
+                    <form method="post" action="" enctype="multipart/form-data">
+                        Login </br>
+                        <input type="text" name="name" value=<?php if (isset($_SESSION['inputName'])) echo $_SESSION['inputName']; ?>> <br /> </br>
+                        Hasło </br>
+                        <input type="password" name="pass"><br />
+                        <input type="submit" class="btn" value="zaloguj" />
 
-    ?>
+                    </form>
+                    <?php
+                    if (isset($_SESSION['nameError'])) {
+                        echo "<span style='color:red;'>" . $_SESSION['nameError'] . "</span><br>";
+                    }
+                    if (isset($_SESSION['passError'])) {
+                        echo "<span style='color:red;'>" . $_SESSION['passError'] . "</span><br>";
+                    }
+                    if (isset($_SESSION['ageError'])) {
+                        echo "<span style='color:red;'>" . $_SESSION['ageError'] . "</span><br>";
+                    }
+
+                    ?>
                 </div>
             </div>
         </section>
@@ -52,14 +50,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-

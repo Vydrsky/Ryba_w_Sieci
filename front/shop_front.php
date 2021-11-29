@@ -76,23 +76,9 @@
             ?>
         </section>
     </main>
-    <div id="social-media-container">
-        <div id="facebook">
-            <i class="icon-facebook-squared"></i>
-        </div>
-        <div id="twitter">
-            <i class="icon-twitter"></i>
-        </div>
-        <div id="instagram">
-            <i class="icon-instagram"></i>
-        </div>
-        <div id="google">
-            <i class="icon-gplus"></i>
-        </div>
-    </div>
-    <footer>
-        Copyright &copy; 2020 - 2021 All rights reserved
-    </footer>
+    <?php
+    include "includes/footer.php";
+    ?>
 </body>
 
 </html>
