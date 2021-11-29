@@ -40,12 +40,6 @@ section{
     text-align: center;
 }
 
-#item input[type=number]{    
-    text-align:center;
-    width:50%;
-    color: var(--dark-color);
-}
-
 #item input[type=text]{    
     text-align:center;
     width:50%;
@@ -56,8 +50,16 @@ section{
     color: var(--text-color);
     background-color: var(--background-color);
     text-align:center;
-    width:50%;
     font-size: 0.7vw;
+    width:50%;
+}
+
+#item textarea{    
+    width:50%;
+    color: var(--dark-color);
+    min-height: 50%;
+    resize: none;
+    min-height: 6vw;
 }
 
 #item input[type=file]{    
