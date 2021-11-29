@@ -13,17 +13,17 @@ ul{
     font-family: "Roboto", sans-serif;
 }
 
-ul > li{
+ul li{
     padding: 1vw 4vw;
     border-width: 0 0 0 1px;
     border-style: solid;
     font-size: 1.5vw;
 }
 
-ul > li:last-child{
+ul li:last-child{
     border-width: 0 1px 0 1px;
 }
 
-ul > li:hover{
+ul li:hover{
     background-color: var(--dark-color);
 }

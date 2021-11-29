@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/zawody_styles.css" />
   <link rel="stylesheet" href="styles/navigation_styles.css" />
- 
+
   <link rel="stylesheet" href="fontello/css/fontello.css" />
   <link rel="stylesheet" href="styles/main_styles.css" />
   <link rel="icon" href="favicon.ico" />
@@ -27,7 +27,7 @@
     <div id="tab">
       <div id="table">
         <h1>Zawody 2021</h1>
-        
+
         <table>
           <tr>
             <th>Zawody</th>
@@ -76,7 +76,7 @@
       </div>
     </div>
   </div>
-  
+
   <?php
   include "includes/footer.php";
   ?>

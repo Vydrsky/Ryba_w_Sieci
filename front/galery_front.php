@@ -14,66 +14,33 @@
 </head>
 
 <body>
-    <header>
-        <div class="inline-header-container-left">
-            <a href="index.php?state=start">
-                <div id="header-image">
-                    <img src="images/logo.png" />
-                </div>
-            </a>
-            <div id="header-title">RYBA-W-SIECI</div>
-        </div>
-        <div class="inline-header-container-right">
-            <div class="header-link">Zaloguj się</div>
-            <div class="header-link">Stwórz Konto</div>
-            <div class="header-link">O Nas</div>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li>Sklep</li>
-            <li>Sprzęt Używany</li>
-            <li>Galeria</li>
-            <li>Newsy</li>
-        </ul>
-    </nav>
+    <?php
+    include "includes/header.php";
+    include "includes/menu.php";
+    ?>
     <main>
         <article>
             <div id="galery-item">
                 <img src="images/galery/bass.jpg">
             </div>
             <div id="galery-item">
-            <img src="images/galery/salmon.jpg">
+                <img src="images/galery/salmon.jpg">
             </div>
             <div id="galery-item">
-            <img src="images/galery/carp.jpg">
+                <img src="images/galery/carp.jpg">
             </div>
             <div id="galery-item">
-            <img src="images/galery/pike.jpg">
+                <img src="images/galery/pike.jpg">
             </div>
             <div id="galery-item">
-            <img src="images/galery/somethingfish.jpg">
+                <img src="images/galery/somethingfish.jpg">
             </div>
-            
+
         </article>
     </main>
-    <div id="social-media-container">
-        <div id="facebook">
-            <i class="icon-facebook-squared"></i>
-        </div>
-        <div id="twitter">
-            <i class="icon-twitter"></i>
-        </div>
-        <div id="instagram">
-            <i class="icon-instagram"></i>
-        </div>
-        <div id="google">
-            <i class="icon-gplus"></i>
-        </div>
-    </div>
-    <footer>
-        Copyright &copy; 2020 - 2021 All rights reserved
-    </footer>
+    <?php
+    include "includes/footer.php";
+    ?>
 </body>
 
 </html>

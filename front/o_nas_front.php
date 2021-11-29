@@ -29,12 +29,12 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        
+
     </style>
 </head>
 
 <body>
-<?php
+    <?php
     include "includes/header.php";
     ?>
     <summary>
@@ -100,8 +100,8 @@
 
 
     <?php
- include "includes/footer.php";
- ?>
+    include "includes/footer.php";
+    ?>
 </body>
 
 </html>

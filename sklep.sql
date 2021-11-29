@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 29, 2021 at 08:08 PM
+-- Host: 127.0.0.1
+-- Generation Time: Nov 30, 2021 at 12:21 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,10 +95,10 @@ CREATE TABLE `produkty_sklep` (
 --
 
 INSERT INTO `produkty_sklep` (`id`, `name`, `type`, `prize`, `image`, `description`, `id_autora`) VALUES
-(1, 'Wędka', 'Na węgorze', 130, 'Baza.png', 'Zwykła wędka, nic więcej', 3),
-(2, 'Wędka szefa', 'Na karasie', 127.42, 'jpg_318-1831.jpg', 'Najlepsza wędka na karasie. Karasie wcale nie jedzą guwna', 3),
-(3, 'xxx', 'x1', 123, 'jpg_318-1831.jpg', 'XNXX', 3),
-(4, 'Wędka', 'x2', 123, 'Baza.png', 'xXxXxXxXxXxXx', 3);
+(1, 'Wędka', 'Na węgorze', 130, 'Baza.png', 'Zwykła wędka, szału nie ma', 3),
+(2, 'Wędka szefa', 'Na karasie', 127.42, 'jpg_318-1831.jpg', 'Najlepsza wędka na karasie.', 3),
+(3, 'xxx', 'x1', 123, 'jpg_318-1831.jpg', 'temptemp', 3),
+(4, 'Wędka', 'x2', 123, 'Baza.png', 'temp', 3);
 
 -- --------------------------------------------------------
 
