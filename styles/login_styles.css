@@ -1,26 +1,60 @@
-#main
-{
-    margin: 0;
-    width: 100%;
-    
+main{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-direction: row;
 }
-h4
-{
-    margin: 0;
-}
-#inputs
-{
-    margin-top: 29vh;
-    margin-bottom: 29vh;
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+section{
     width: 40%;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: var(--background-color);
 }
-input.btn
-{
-    margin-top: 10px;
-    margin-left: 18%;
- 
+
+#item{
+    background-color: var(--light-background-color);
+    color: var(--text-color);
+    margin: 1rem;
+    display: flex;
+    vertical-align: top;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#item #item-title {
+    text-align: center;
+    width:60%;
+    font-size:2vw;
+    padding-top:2%;
+    word-wrap:break-word;
+}
+
+#item #item-content{
+    font-size:1vw;
+    word-wrap:break-word;
+    padding-top:2%;
+}
+
+#item #item-content form{    
+    text-align: center;
+}
+
+#item input[type=number]{    
+    text-align:center;
+    width:50%;
+    color: var(--dark-color);
+}
+
+#item input[type=text]{    
+    text-align:center;
+    width:50%;
+    color: var(--dark-color);
+}
+
+#item input[type=submit]{
+    color: var(--text-color);
+    background-color: var(--background-color);
+    text-align:center;
+    width:50%;
 }

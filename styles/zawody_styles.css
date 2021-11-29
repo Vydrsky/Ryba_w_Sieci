@@ -1,11 +1,8 @@
-main {
 
-    width: 100%;
-   
-}
 #main
 {
-    background-image: url("photos/zdjecietlo.jpg");
+    background-image: url('../images/brittany-1526502_1920.jpg') !important;
+    width: 100%;
 }
 #tab
 {
