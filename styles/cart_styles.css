@@ -71,6 +71,7 @@ section{
     background-color: var(--background-color);
     text-align:center;
     width:50%;
+    font-size: 0.7vw;
 }
 
 #item #item-trash{
