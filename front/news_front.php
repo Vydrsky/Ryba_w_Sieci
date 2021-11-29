@@ -18,38 +18,21 @@
     <?php include "includes/menu.php"; ?>
     <main>
         <section>
-        <div id="item">
-                <div id="item-image">
-                    <img src="images/promocja.jpg" />
-                </div>
-                <div id="item-content">
-                    <div id="item-title">
-                        MEGA PROMOCJE - ostatnie sztuki na magazynie!
-                    </div>
-                    <div id="item-info">
-                        Teraz oficjalnie możemy to ogłosić. Podczas trzeciego Black Friday w historii sklepu procentowa zniżka ulegnie zmianie. W 2020 roku obowiązywał 20% rabat na całą ofertę. W tej edycji wejdziemy na wyższy poziom. Drodzy Wędkarze. Drapieżny czaso-umilacz jest już w połowie drogi. BLACK FRIDAY 2021…
-                    </div>
-                    <div id="item-forwarding">
-                        <a href="index.php?state=start">Czytaj więcej...</a>
-                    </div>
-                </div>
-            </div>
-            <div id="item">
-                <div id="item-image">
-                    <img src="images/promocja.jpg" />
-                </div>
-                <div id="item-content">
-                    <div id="item-title">
-                        BLACK FRIDAY!
-                    </div>
-                    <div id="item-info">
-                    Teraz oficjalnie możemy to ogłosić. Podczas trzeciego Black Friday w historii sklepu procentowa zniżka ulegnie zmianie. W 2020 roku obowiązywał 20% rabat na całą ofertę. W tej edycji wejdziemy na wyższy poziom. Drodzy Wędkarze. Drapieżny czaso-umilacz jest już w połowie drogi. BLACK FRIDAY 2021…
-                    </div>
-                    <div id="item-forwarding">
-                        <a href="index.php?state=start">Czytaj więcej...</a>
-                    </div>
-                </div>
-            </div>
+            <?php 
+                for($i = 0; $i<$_SESSION['newsCount']; $i++)
+            {
+                $news = unserialize($_SESSION['news'][$i]);
+                
+                echo "<div id='item'>";
+                    echo "<div id='item-image'> <img src='images/news/" . $news->getImage() . "'/> </div>";
+                    echo "<div id='item-content'>";
+                        echo "<div id='item-title'>" . $news->getTitle() . "</div>";
+                        echo "<div id='item-info'>" . $news->getDescription(). "</div>";
+                        echo "<div id='item-forwarding'> <a href='index.php?state=concrete_news&id=" . $_SESSION['newsId'][$i] . "'>Czytaj więcej...</a> </div>";     
+                    echo  "</div>";
+                echo "</div>";
+            }
+        ?>
         </section>
     </main>
     <?php
