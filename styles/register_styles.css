@@ -4,7 +4,10 @@ main{
     align-content: flex-start;
     flex-direction: row;
 }
-
+h1
+{
+    margin: 0;
+}
 section{
     width: 40%;
     background-color: var(--background-color);
@@ -58,7 +61,17 @@ section{
     text-align:center;
     width:50%;
 }
+
+#item input[type=file]{    
+    text-align:center;
+    width:50%;
+}
 #item input[type=password]{    
+    text-align:center;
+    width:50%;
+    color: var(--dark-color);
+}
+#item input[type=date]{    
     text-align:center;
     width:50%;
     color: var(--dark-color);

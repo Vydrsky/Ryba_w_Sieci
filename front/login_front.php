@@ -25,10 +25,10 @@
                 </div>
                 <div id="item-content">
                 <form method="post" action="" enctype="multipart/form-data">
-                Login : </br>  
-                <input type="text" class="text_inputs" name="name" value=<?php if (isset($_SESSION['inputName'])) echo $_SESSION['inputName']; ?>> <br /> </br>
+                Login </br>  
+                <input type="text"  name="name" value=<?php if (isset($_SESSION['inputName'])) echo $_SESSION['inputName']; ?>> <br /> </br>
                     Hasło </br>
-                    <input type="password" class="text_inputs" name="pass"><br />
+                    <input type="password"  name="pass"><br />
                     <input type="submit" class="btn" value="zaloguj" />
                     
                 </form>
