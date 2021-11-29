@@ -14,8 +14,16 @@
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-    text-decoration: none;
+    
 }
+a,
+a:link,
+a:visited,
+a:hover,
+a:active{
+    text-decoration: none !important;
+}
+
 h1
 {
     font-size: 50px;

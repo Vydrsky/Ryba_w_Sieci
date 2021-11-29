@@ -39,7 +39,7 @@
                     <div class="link-description">WYPOŻYCZANIE SPRZĘTU</div>
                 </div>
             </a>
-            <a href="https://www.youtube.com/watch?v=xwUe6zqHPTA">
+            <a href="index.php?state=galery">
                 <div class="site-link">
                     <img src="images/info-link.jpg" />
                     <div class="link-description">GALERIA ZDOBYCZY UŻYTKOWNIKÓW</div>
