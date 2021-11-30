@@ -69,11 +69,13 @@ section{
 #item #item-description{
     text-align: justify;
     padding:2%;
+    word-wrap:break-word;
 }
 
 #item #item-info{
     padding:2%;
     width:46%;
+    word-wrap:break-word;
 }
 
 #item #add-to-cart{

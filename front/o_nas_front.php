@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/o_nas_styles.css" />
+    <link rel="stylesheet" href="styles/navigation_styles.css" />
     <link rel="stylesheet" href="fontello/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
     <!-- Latest compiled and minified CSS -->
