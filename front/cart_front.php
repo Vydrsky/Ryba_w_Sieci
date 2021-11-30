@@ -37,7 +37,7 @@
                         </form>
                     </div>
                     <div id='item-prize'>".
-                        $row['prize']
+                        $row['prize']*$_SESSION['cart'][$row['id']]
                     ."</div>
                     <div id='item-trash'>
                         <a href='index.php?state=start'>  
