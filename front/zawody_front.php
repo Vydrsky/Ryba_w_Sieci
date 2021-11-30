@@ -20,9 +20,8 @@
 </head>
 
 <body>
-  <?php
-  include "includes/header.php";
-  ?>
+  <?php include "includes/header.php"; ?>
+  <?php include "includes/menu.php"; ?>
   <div id="main">
     <div id="tab">
       <div id="table">

@@ -15,6 +15,7 @@
 
 <body>
     <?php include "includes/header.php"; ?>
+    <?php include "includes/menu.php"; ?>
     <main>
         <section>
             <div id="item">
