@@ -22,29 +22,31 @@
                 <img src="images/konkursy-link.jpg" />
             </div>
             <div id="profile-data">
-                Twoje Dane: <br><br>
-                Imię i Nazwisko: Jan Kowalski<br>
-                Pseudonim: TurboRybiarz34<br>
-                Adres Email: szczupaki1@gmail.com<br><br>
-                Użytkownik<br>
-                Ranga: Karaś (314 punktów)<br>
+                <?php
+                echo $_SESSION['userid'];
+                echo $_SESSION['profile_user_data'];
+                echo "Twoje Dane: <br><br>";
+                echo "Imię i Nazwisko: {$_SESSION['profile_user_data']['name']} {$_SESSION['profile_user_data']['surname']}<br>";
+                echo "Pseudonim: TurboRybiarz34<br>";
+                echo "Adres Email: szczupaki1@gmail.com<br><br>";
+                echo "Użytkownik<br>";
+                echo "Ranga: Karaś (314 punktów)<br>";
+                ?>
             </div>
             <form method="post" action="index.php?state=profile&edit=1">
-                <input type="submit" value="Edytuj Profil"/>
+                <input type="submit" value="Edytuj Profil" />
             </form>
         </section>
         <article>
             <h2>Twoje Aukcje</h2>
             <div id="auction-container">
-                <div class="auction-item">
-                    temp
-                </div>
-                <div class="auction-item">
-                    temp
-                </div>
-                <div class="auction-item">
-                    temp
-                </div>
+                <?php
+                foreach ($_SESSION['profile_auction_data'] as $row) {
+                    echo '<div class="auction-item">';
+                    echo $row['type'];
+                    echo "</div>";
+                }
+                ?>
             </div>
             <h2>Twoje Zamówienia</h2>
             <div id="auction-container">
