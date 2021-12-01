@@ -34,7 +34,6 @@ article {
 .auction-item{
     background-color: var(--light-background-color);
     width:100%;
-    padding:3rem;
     margin: 1rem 1rem 0 1rem;
 }
 .auction-item:last-child{

@@ -19,18 +19,19 @@
     <main>
         <section>
             <div id="profile-image">
-                <img src="images/konkursy-link.jpg" />
+            <?php
+                $user = $_SESSION['profile_user_data'];
+                echo '<img src="'.$user->getImage().'" />'
+                ?>
             </div>
             <div id="profile-data">
                 <?php
-                echo $_SESSION['userid'];
-                echo $_SESSION['profile_user_data'];
                 echo "Twoje Dane: <br><br>";
-                echo "Imię i Nazwisko: {$_SESSION['profile_user_data']['name']} {$_SESSION['profile_user_data']['surname']}<br>";
-                echo "Pseudonim: TurboRybiarz34<br>";
-                echo "Adres Email: szczupaki1@gmail.com<br><br>";
-                echo "Użytkownik<br>";
-                echo "Ranga: Karaś (314 punktów)<br>";
+                echo "Imię i Nazwisko: ".$user->getName()." ".$user->getSurname()."<br>";
+                echo "Pseudonim: ".$user->getLogin()."<br>";
+                echo "Adres Email:".$user->getEmail()."<br><br>";
+                echo "Uprawnienia: ".$user->getPermission()."<br>";
+                echo "Ranga: ".$user->getRank()." (".$user->getPoints()." punktów)"."<br>";
                 ?>
             </div>
             <form method="post" action="index.php?state=profile&edit=1">
@@ -41,9 +42,9 @@
             <h2>Twoje Aukcje</h2>
             <div id="auction-container">
                 <?php
-                foreach ($_SESSION['profile_auction_data'] as $row) {
+                foreach($_SESSION['profile_auction_data'] as $offer){
                     echo '<div class="auction-item">';
-                    echo $row['type'];
+                    echo '<img src="'.$offer->getImage().'"/>';
                     echo "</div>";
                 }
                 ?>
