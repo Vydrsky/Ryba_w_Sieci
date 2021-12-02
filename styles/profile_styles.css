@@ -6,8 +6,9 @@ section{
 
 #profile-image{
     padding: 1rem;
-    margin-left: 10rem;
+    margin-left: 10vw;
     width:30%;
+    min-height: 5rem;
 }
 #profile-image img{
     object-fit: contain;
@@ -38,4 +39,21 @@ article {
 }
 .auction-item:last-child{
     margin-bottom:1rem;
+}
+
+#edit-form{
+    line-height: 2vw;
+    padding: 0 0.5vw 0 1vw;
+    text-align: right;
+    background-color: var(--background-color);
+}
+
+#form-container{
+    display:inline-flex;
+    padding:1vw;
+    background-color: var(--background-color);
+    margin: 0;
+}
+form input{
+    height: 2vw;
 }
