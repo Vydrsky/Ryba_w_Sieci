@@ -19,26 +19,40 @@ section{
     font-size: 1.5rem;
 }
 
-article {
-    padding: 1rem;
-    margin:0 0 0 10rem;
+article h2{
+    margin-left: 10%;
 }
 
 #auction-container{
     width:80%;
+    word-break: break-all;
     background-color: var(--background-color);
     display:flex;
     align-content: center;
     flex-wrap: wrap;
+    margin:0 auto;
 }
 
 .auction-item{
+    display:inline-flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
     background-color: var(--light-background-color);
     width:100%;
     margin: 1rem 1rem 0 1rem;
+    padding: 4%;
 }
 .auction-item:last-child{
     margin-bottom:1rem;
+}
+.auction-item-image{
+    width:30%;
+}
+.auction-item-description{
+    width:62%;
+    text-align: justify;
+    
 }
 
 #edit-form{

@@ -5,6 +5,7 @@ if (!isset($_SESSION['name']) || !isset($_SESSION['userid'])) {
     exit();
 }
 
+
 require_once "User.php";
 require_once "Offer.php";
 require "db_connect.php";
@@ -47,8 +48,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['edit']) && $_GET['edit'
         $query->bindValue(":surname", $_POST['new_surname']);
         $query->bindValue(":id", $_SESSION['userid']);
         $query->execute();
-        unset($_GET['edit']);
+        header("location:index.php?state=profile");
+        exit();
     }
+}
+
+if(isset($_GET['delete_auction'])){
+    $query = $db->prepare("DELETE FROM produkty_aukcje WHERE id=:id");
+    $query->bindValue(":id",$_GET['delete_auction']);
+    $query->execute();
+    header("location:index.php?state=profile");
 }
 
 //kod wyswietlania danych na podstronie
@@ -60,12 +69,14 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 $user = new User($result['id'], $result['login'], $result['email'], $result['name'], $result['surname'], $result['permission'], $result['points'], $result['rank'], $result['profile_image']);
 $_SESSION['profile_user_data'] = $user;
 
-$query = $db->prepare("SELECT * FROM produkty_aukcje AS p INNER JOIN users AS u ON p.id_autora=u.id");
+$query = $db->prepare("SELECT p.id AS productId,p.name,p.id_autora,p.image,p.type,p.state,p.age,p.prize FROM produkty_aukcje AS p INNER JOIN users AS u ON p.id_autora=u.id WHERE p.id_autora=:id");
+$query->bindValue(":id", $_SESSION['userid']);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 $i = 0;
+unset($_SESSION['profile_auction_data']);
 foreach ($result as $row) {
-    $offer = new Offer($row['id'], $row['id_autora'], $row['image'], $row['name'], $row['type'], $row['state'], $row['age'], $row['prize']);
+    $offer = new Offer($row['productId'], $row['id_autora'], $row['image'], $row['name'], $row['type'], $row['state'], $row['age'], $row['prize']);
     $_SESSION['profile_auction_data'][$i] = $offer;
     $i++;
 }
