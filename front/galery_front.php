@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="styles/galery_styles.css" />
     <link rel="stylesheet" href="fontello/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href); //prosty skrypt aby uniemożliwic przesyłanie formularza przez przypdaek z użyciem f5
+        }
+    </script>
 </head>
 
 <body>
@@ -27,8 +32,8 @@
                 <div id="form-description-container">
                     Obrazek:<br>Opis:<br><br><br><br>Waga:<br>
                 </div>
-                <form method="post" action="index.php?state=galery"  enctype="multipart/form-data">
-                    <input type="file" accept="image/jpeg,image/gif" name="gallery-image" /><br>
+                <form method="post" action="index.php?state=galery" enctype="multipart/form-data">
+                    <input type="file" accept="image/jpeg,image/gif,image/png" name="gallery-image" /><br>
                     <textarea name="gallery-description" rows="5"><?php if (isset($_SESSION['gallery-description-input'])) echo $_SESSION['gallery-description-input']; ?></textarea><br>
                     <input type="number" name="gallery-weight" value="<?php if (isset($_SESSION['gallery-weight-input'])) echo $_SESSION['gallery-weight-input']; ?>" min='0' step='0.01' />kg<br>
                     <?php
@@ -45,14 +50,28 @@
         </section>
         <article>
             <?php
-            foreach($_SESSION['gallery_data'] as $item){
-            echo 
-            '<div class="galery-item">'.
-                '<img src="'.$item['zdjecie'].'">'.
-                '<div class="galery-item-overlay">'.
-                'temptemptemptemptpmetmetpme'.
-                '</div>'.
-            '</div>';
+            foreach ($_SESSION['gallery_data'] as $item) {
+                echo
+                '<div class="galery-item">' .
+                    '<img src="' . $item['zdjecie'] . '">' .
+                    '<div class="galery-item-overlay">' .
+                    $item['opis'] . '<br><br>Waga: ' . $item['waga'] . 'kg<br><br>Polubienia: ' . $item['polubienia'] . '<br>';
+
+                $likedFlag = false;
+                foreach ($_SESSION['likes'] as $row) {
+                    if ($row['userid'] == $_SESSION['userid'] && $row['postid'] == $item['id']) {
+                        $likedFlag = true;
+                    }
+                }
+                if (!$likedFlag) {
+                    echo '<a href="index.php?state=galery&like=' . $item['id'] . '">Lubie To!' . '</a>';
+                }
+                else{
+                    echo 'Już lubisz ten obrazek :)';
+                }
+                echo
+                    '</div>' .
+                '</div>';
             }
             ?>
         </article>

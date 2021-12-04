@@ -23,7 +23,7 @@
             <a href="index.php?state=shop">
                 <div class="site-link">
                     <img src="images/sklep-link.jpg" />
-                    <div class="link-description">ZAKUP SPRZĘTU</div>
+                    <div class="link-description">SKLEP</div>
                 </div>
             </a>
             <a href="index.php?state=zawody">

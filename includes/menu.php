@@ -4,13 +4,13 @@
             <li>Sklep</li>
         </a>
         <a href="index.php?state=shop">
-            <li>Sprzęt Używany</li>
+            <li>Wypożyczanie Sprzętu</li>
         </a>
         <a href="index.php?state=galery">
-            <li>Galeria</li>
+            <li>Galeria Użytkowników</li>
         </a>
         <a href="index.php?state=news">
-            <li>Newsy</li>
+            <li>Ogłoszenia</li>
         </a>
         <a href="index.php?state=o_nas">
             <li>O Nas</li>
