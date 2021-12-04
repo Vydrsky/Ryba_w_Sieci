@@ -64,10 +64,10 @@
                     }
                 }
                 if (!$likedFlag) {
-                    echo '<a href="index.php?state=galery&like=' . $item['id'] . '">Lubie To!' . '</a>';
+                    echo '<br><span style="color:lightblue;"><a href="index.php?state=galery&like=' . $item['id'] . '">Lubie To!' . '</a></span>';
                 }
                 else{
-                    echo 'Już lubisz ten obrazek :)';
+                    echo '<br><span style="color:lightgreen;">Już lubisz ten obrazek :)</span>';
                 }
                 echo
                     '</div>' .
