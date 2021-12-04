@@ -24,21 +24,21 @@
             <div id="filter-form-container">
                 <form method="post" action="">
                     <p>Sprzęt Rybacki:</p>
-                    <input type="checkbox" name="rods-checkbox" /> Wędki<br>
-                    <input type="checkbox" name="lines-checkbox" /> Żyłki<br>
-                    <input type="checkbox" name="baits-checkbox" /> Przynęty<br>
-                    <input type="checkbox" name="nets-checkbox" /> Sieci<br>
-                    <input type="checkbox" name="floats-checkbox" /> Spławiki<br>
-                    <input type="checkbox" name="reels-checkbox" /> Kołowrotki<br>
+                    <input type="checkbox" name="rods-checkbox" <?php if(isset($_POST['rods-checkbox'])){echo "checked";} ?>/> Wędki<br>
+                    <input type="checkbox" name="lines-checkbox" <?php if(isset($_POST['lines-checkbox'])){echo "checked";} ?> /> Żyłki<br>
+                    <input type="checkbox" name="baits-checkbox" <?php if(isset($_POST['baits-checkbox'])){echo "checked";} ?> /> Przynęty<br>
+                    <input type="checkbox" name="nets-checkbox" <?php if(isset($_POST['nets-checkbox'])){echo "checked";} ?> /> Sieci<br>
+                    <input type="checkbox" name="floats-checkbox" <?php if(isset($_POST['floats-checkbox'])){echo "checked";} ?> /> Spławiki<br>
+                    <input type="checkbox" name="reels-checkbox" <?php if(isset($_POST['reels-checkbox'])){echo "checked";} ?> /> Kołowrotki<br>
                     <p>Akcesoria:</p>
-                    <input type="checkbox" name="clothes-checkbox" /> Ubrania<br>
-                    <input type="checkbox" name="shoes-checkbox" /> Buty<br>
-                    <input type="checkbox" name="seats-checkbox" /> Siedziska<br>
-                    <input type="checkbox" name="tents-checkbox" /> Namioty<br>
-                    <input type="checkbox" name="bags-checkbox" /> Torby i Plecaki<br>
-                    <input type="checkbox" name="landing-nets-checkbox" /> Podbieraki<br>
+                    <input type="checkbox" name="clothes-checkbox" <?php if(isset($_POST['clothes-checkbox'])){echo "checked";} ?> /> Ubrania<br>
+                    <input type="checkbox" name="shoes-checkbox" <?php if(isset($_POST['shoes-checkbox'])){echo "checked";} ?> /> Buty<br>
+                    <input type="checkbox" name="seats-checkbox" <?php if(isset($_POST['seats-checkbox'])){echo "checked";} ?> /> Siedziska<br>
+                    <input type="checkbox" name="tents-checkbox" <?php if(isset($_POST['tents-checkbox'])){echo "checked";} ?> /> Namioty<br>
+                    <input type="checkbox" name="bags-checkbox"  <?php if(isset($_POST['bags-checkbox'])){echo "checked";} ?>/> Torby i Plecaki<br>
+                    <input type="checkbox" name="landing-nets-checkbox" <?php if(isset($_POST['landing-nets-checkbox'])){echo "checked";} ?> /> Podbieraki<br>
                     <p>Cena:</p>
-                    <input type="number" name="min-cost" min="0" max="999999" /> - <input type="number" name="max-cost" min="0" max="999999" /><br>
+                    <input type="number" name="min-cost" min="0" max="999999" <?php if(isset($_POST['min-cost'])){echo "value='".$_POST['min-cost']."'";}?>/> - <input type="number" name="max-cost" min="0" max="999999"  <?php if(isset($_POST['max-cost'])){echo "value='".$_POST['max-cost']."'";}?>/><br>
                     <p>Opcje Dostawy:</p>
                     <input type="checkbox" name="free-delivery-checkbox" /> Darmowa Dostawa<br>
                     <input type="checkbox" name="poland-delivery-checkbox" /> Dostawa z Polski<br>
