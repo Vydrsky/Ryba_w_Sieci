@@ -7,7 +7,7 @@ ul{
     flex-direction: row;
     flex-wrap: nowrap;
     width:100%;
-    padding:0;
+    padding:1vw 0;
     background-color: var(--highlight-color);
     color: var(--text-color);
     font-family: "Roboto", sans-serif;
@@ -26,4 +26,7 @@ ul li:last-child{
 
 ul li:hover{
     background-color: var(--dark-color);
+}
+ul a{
+    height: 100%;
 }

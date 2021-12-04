@@ -1,10 +1,10 @@
 :root{
-    --text-color: #E4E8E6;      /* tu można łatwo podmienić palete */
-    --light-background-color: #A38C76;
-    --header-color:#47111B;
-    --background-color:#5A4D3C;
-    --highlight-color: #2C0B11;
-    --dark-color: #0B0A09;
+    --text-color: #FFFCF2;      /* tu można łatwo podmienić palete */
+    --light-background-color: #CCC5B9;
+    --header-color:#EB5E28;
+    --background-color:#403D39;
+    --highlight-color: #252422;
+    --dark-color: #20201E;
 }
 
 *{
@@ -49,11 +49,11 @@ header{
 }
 summary{
     text-align: justify;
-    background-color: var(--header-color);
+    background-color: var(--background-color);
     margin:auto;
     padding: 3rem;
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 1.2vw;
 }
 
 .inline-header-container-left,
@@ -124,15 +124,17 @@ main{
     align-items: stretch;
     text-align:center;
     vertical-align: middle;
-    justify-content: space-around;
-    background-color: var(--background-color);
+    justify-content: flex-end;
+    background-color: var(--dark-color);
+    column-gap: 4vw;
+    padding-right:2vw;
 }
 
 #facebook,
 #twitter,
 #instagram,
 #google{
-    padding: 2rem;
+    padding: 1.5vw 1vw;
     transition: 0.5s ease-in-out;
 }
 #instagram {
@@ -158,8 +160,8 @@ main{
 }
 
 footer{
-    padding: 1rem;
-    padding: 1rem;
+    padding: 1vw;
+    padding: 1vw;
     font-size: 1vw;
     background-color: var(--dark-color);
     color:var(--text-color);
