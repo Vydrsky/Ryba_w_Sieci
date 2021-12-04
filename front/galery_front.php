@@ -44,22 +44,17 @@
             </fieldset>
         </section>
         <article>
-            <div id="galery-item">
-                <img src="images/galery/bass.jpg">
-            </div>
-            <div id="galery-item">
-                <img src="images/galery/salmon.jpg">
-            </div>
-            <div id="galery-item">
-                <img src="images/galery/carp.jpg">
-            </div>
-            <div id="galery-item">
-                <img src="images/galery/pike.jpg">
-            </div>
-            <div id="galery-item">
-                <img src="images/galery/somethingfish.jpg">
-            </div>
-
+            <?php
+            foreach($_SESSION['gallery_data'] as $item){
+            echo 
+            '<div class="galery-item">'.
+                '<img src="'.$item['zdjecie'].'">'.
+                '<div class="galery-item-overlay">'.
+                'temptemptemptemptpmetmetpme'.
+                '</div>'.
+            '</div>';
+            }
+            ?>
         </article>
     </main>
     <?php

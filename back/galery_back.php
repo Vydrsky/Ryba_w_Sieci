@@ -45,4 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     }
 }
-    
+
+
+$query = $db->prepare('SELECT opis,waga,zdjecie,polubienia FROM galeria_zdobyczy');
+$query->execute();
+$_SESSION['gallery_data'] = $query->fetchAll();   

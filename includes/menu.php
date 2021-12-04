@@ -12,5 +12,8 @@
         <a href="index.php?state=news">
             <li>Newsy</li>
         </a>
+        <a href="index.php?state=o_nas">
+            <li>O Nas</li>
+        </a>
     </ul>
 </nav>
