@@ -40,6 +40,7 @@
                 echo '<input type="submit" value="Edytuj Profil" />';
                 echo '</form>';
             } else {
+                echo "<fieldset>";
                 echo "<div id='form-container'>";
                 echo "<div id='edit-form'>Imię: <br>Nazwisko: <br>Login: <br>Email: <br>Potwierdź Hasło: </div>";
                 echo '<form method="post" action="index.php?state=profile&edit=2">';
@@ -77,6 +78,7 @@
                     echo "<span style='color:red;'>" . $_SESSION['password_confirm_error'] . "</span><br>";
                 echo '</form>';
                 echo "</div>";
+                echo "</fieldset>";
             }
             echo
             '<div id="logout-container">' .

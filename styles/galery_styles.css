@@ -11,6 +11,7 @@ article{
     padding: 2%;
     row-gap: 2rem;
     column-gap: 2rem;
+    color: var(--header-color);
 }
 
 #galery-item{
@@ -27,5 +28,48 @@ article{
 #galery-item img:hover{
     filter:brightness(50%);
     transition: 1s ease-in-out;
+}
+section{
+    font-family: "Roboto", sans-serif;
+    width:90%;
+    margin:2% 3%;
+    padding:2%;
+    min-height: 100px;
+    background-color: var(--background-color);
+    color: var(--header-color);
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+}
+fieldset{
+    display:inline-flex;
+    align-content: center;
+    justify-content: center;
+    padding: 2vw;
+    width:30%;
+}
+
+fieldset form{
+    width:75%;
+}
+
+fieldset textarea{
+    width: 100%;
+    word-break: break-word;
+    resize: none;
+}
+#add-image-text{
+    text-align: center;
+    padding: 2vw;
+}
+#add-image-text p{
+   text-align: center;
+   margin-bottom: 1vw;
+}
+
+#form-description-container{
+    line-height: 20px;
+    text-align: right;
+    padding: 0 0.5vw 0 1vw;
 }
 
