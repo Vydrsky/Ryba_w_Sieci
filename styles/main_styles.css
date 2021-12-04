@@ -76,6 +76,11 @@ summary{
     align-items: flex-start;
 }
 
+.inline-header-container-right a{
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+}
+
 .inline-header-container-right i{
     vertical-align: bottom;
 }
