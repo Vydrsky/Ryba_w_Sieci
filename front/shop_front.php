@@ -39,10 +39,6 @@
                     <input type="checkbox" name="landing-nets-checkbox" <?php if(isset($_POST['landing-nets-checkbox'])){echo "checked";} ?> /> Podbieraki<br>
                     <p>Cena:</p>
                     <input type="number" name="min-cost" min="0" max="999999" <?php if(isset($_POST['min-cost'])){echo "value='".$_POST['min-cost']."'";}?>/> - <input type="number" name="max-cost" min="0" max="999999"  <?php if(isset($_POST['max-cost'])){echo "value='".$_POST['max-cost']."'";}?>/><br>
-                    <p>Opcje Dostawy:</p>
-                    <input type="checkbox" name="free-delivery-checkbox" /> Darmowa Dostawa<br>
-                    <input type="checkbox" name="poland-delivery-checkbox" /> Dostawa z Polski<br>
-                    <input type="checkbox" name="tomorrow-delivery-checkbox" /> Dostawa na jutro<br><br>
                     <input type="submit" value="Potwierdź" />
                 </form>
             </div>
