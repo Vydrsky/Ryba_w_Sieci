@@ -2,7 +2,7 @@ article{
     display: inline-flex;
     vertical-align: top;
     align-content: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
     width: 90%;
@@ -11,21 +11,88 @@ article{
     padding: 2%;
     row-gap: 2rem;
     column-gap: 2rem;
+    color: var(--header-color);
 }
 
-#galery-item{
-    max-height: 300px;
+.galery-item{
+    min-width: 20%;
     max-width: 30%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
 }
 
-#galery-item img{
+.galery-item img{
     object-fit:scale-down;
-    filter:brightness(100%);
-    transition: 1s ease-in-out;
+}
+.galery-item-overlay{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    font-size: 2vw;
+    font-family: 'Roboto',sans-serif;
+    padding:20% 0;
 }
 
-#galery-item img:hover{
-    filter:brightness(50%);
-    transition: 1s ease-in-out;
+.galery-item-overlay:hover{
+    background-color: rgba(0,0,0,0.5);
+    opacity: 1;
 }
+
+.galery-item-overlay a{
+    font-weight: bold !important;
+}
+
+section{
+    font-family: "Roboto", sans-serif;
+    width:90%;
+    margin:2% 3%;
+    padding:2%;
+    min-height: 100px;
+    background-color: var(--background-color);
+    color: var(--header-color);
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+}
+fieldset{
+    display:inline-flex;
+    align-content: center;
+    justify-content: center;
+    padding: 2vw;
+    width:30%;
+}
+
+fieldset form{
+    width:75%;
+}
+
+fieldset textarea{
+    width: 100%;
+    word-break: break-word;
+    resize: none;
+}
+#add-image-text{
+    text-align: center;
+    padding: 2vw;
+}
+#add-image-text p{
+   text-align: center;
+   margin-bottom: 1vw;
+}
+
+#form-description-container{
+    line-height: 20px;
+    text-align: right;
+    padding: 0 0.5vw 0 1vw;
+}
+
 
