@@ -1,5 +1,10 @@
 <?php
 
+if(isset($_SESSION['userid'])){
+	header("location: index.php?state=profile");
+	exit();
+}
+
 unset($_SESSION['passError']);
 unset($_SESSION['nameError']);
 
