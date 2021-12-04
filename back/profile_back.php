@@ -74,7 +74,7 @@ $query->bindValue(":id", $_SESSION['userid']);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 $i = 0;
-unset($_SESSION['profile_auction_data']);
+$_SESSION['profile_auction_data'] = array(); //empty the array
 foreach ($result as $row) {
     $offer = new Offer($row['productId'], $row['id_autora'], $row['image'], $row['name'], $row['type'], $row['state'], $row['age'], $row['prize']);
     $_SESSION['profile_auction_data'][$i] = $offer;

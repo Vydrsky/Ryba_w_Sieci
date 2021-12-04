@@ -6,31 +6,39 @@
     text-align:center;
     vertical-align: middle;
     justify-content: center;
-    column-gap: 2rem;
-    row-gap: 2rem;
+    column-gap: 4vw;
+    row-gap: 4vw;
+    width:85%;
+    margin: 0 auto;
+    padding: 3vw 0;
+    background-color: var(--background-color);
 }
 
 #image-site-links img {
     object-fit: cover;
     width: 100%;
-    border-radius: 8px;
+    height: 100%;
+    border-radius: 4px;
     transition: 0.5s ease-in-out;
-    filter: grayscale(100%);
+    filter:brightness(0.75);
+    transform: scale(1.0);
   }
 
 .site-link{
+    overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 34vw;
-    width: 44vw;
+    height: 28vw;
+    width: 36vw;
     transition: 0.5s ease-in-out;
 }
 .site-link:hover{
-    transform: scale(1.02);
+    
 }
 #image-site-links img:hover{
     transition: 0.5s;
-    filter: grayscale(0%);
+    filter:brightness(1);
+    transform: scale(1.1);
 }
 
 .link-description{

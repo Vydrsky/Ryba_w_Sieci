@@ -55,7 +55,7 @@
 }
 
 .icon-user:before { content: '\e800'; font-size: 4vw; color:#E4E8E6;} /* '' */
-.icon-gplus:before { content: '\f0d5'; font-size: 8vw; color:#E4E8E6;} /* '' */
-.icon-instagram:before { content: '\f16d'; font-size: 8vw; color:#E4E8E6;} /* '' */
-.icon-facebook-squared:before { content: '\f308'; font-size: 8vw; color:#E4E8E6;} /* '' */
-.icon-twitter:before { content: '\f309'; font-size: 8vw; color:#E4E8E6;} /* '' */
+.icon-gplus:before { content: '\f0d5'; font-size: 4vw; color:#E4E8E6;} /* '' */
+.icon-instagram:before { content: '\f16d'; font-size: 4vw; color:#E4E8E6;} /* '' */
+.icon-facebook-squared:before { content: '\f308'; font-size: 4vw; color:#E4E8E6;} /* '' */
+.icon-twitter:before { content: '\f309'; font-size: 4vw; color:#E4E8E6;} /* '' */

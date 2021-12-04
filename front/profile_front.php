@@ -78,14 +78,18 @@
                 echo '</form>';
                 echo "</div>";
             }
+            echo
+            '<div id="logout-container">' .
+                '<a href="index.php?state=logout"><button>Wyloguj się</button></a>"' .
+                '</div>';
             ?>
         </section>
         <article>
             <h2>Twoje Aukcje</h2>
             <div id="auction-container">
                 <?php
-                foreach ($_SESSION['profile_auction_data'] as $offer) {   
-                    echo 
+                foreach ($_SESSION['profile_auction_data'] as $offer) {
+                    echo
                     '<div class="auction-item">' .
                         "<div class='auction-item-image'>" .
                         '<img src="' . $offer->getImage() . '"/>' .
@@ -98,7 +102,6 @@
                         "</div>" .
                         "</div>";
                 }
-                unset($_SESSION['profile_auction_data']);
                 ?>
             </div>
             <h2>Twoje Zamówienia</h2>
