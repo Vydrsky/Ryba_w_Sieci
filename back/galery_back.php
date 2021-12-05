@@ -6,11 +6,13 @@ unset($_SESSION['galery-weight-error']);
 unset($_SESSION['likes']);
 
 require 'db_connect.php';
-$query = $db->prepare('SELECT name FROM users WHERE id=:id');
-$query->bindValue(':id', $_SESSION['userid']);
-$query->execute();
-$result = $query->fetch();
-$_SESSION['username'] = $result['name'];
+if (isset($_SESSION['userid'])) {
+    $query = $db->prepare('SELECT name FROM users WHERE id=:id');
+    $query->bindValue(':id', $_SESSION['userid']);
+    $query->execute();
+    $result = $query->fetch();
+    $_SESSION['username'] = $result['name'];
+}
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $_SESSION['gallery-image-input'] = $_FILES['gallery-image'];

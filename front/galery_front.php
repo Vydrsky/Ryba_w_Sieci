@@ -24,30 +24,36 @@
     include "includes/menu.php";
     ?>
     <main>
-        <section>
-            <div id="add-image-text">
-                <p>Witaj <?php echo $_SESSION['username']; ?></p>Podziel się z nami swoimi zdobyczami wypełniając formularz<br> Inni użytkownicy mogą polubić twoje zdjęcia<br>Dla najlepszych łowców czekają niesamowite nagrody
-            </div>
-            <fieldset>
-                <div id="form-description-container">
-                    Obrazek:<br>Opis:<br><br><br><br>Waga:<br>
-                </div>
-                <form method="post" action="index.php?state=galery" enctype="multipart/form-data">
-                    <input type="file" accept="image/jpeg,image/gif,image/png" name="gallery-image" /><br>
-                    <textarea name="gallery-description" rows="5"><?php if (isset($_SESSION['gallery-description-input'])) echo $_SESSION['gallery-description-input']; ?></textarea><br>
-                    <input type="number" name="gallery-weight" value="<?php if (isset($_SESSION['gallery-weight-input'])) echo $_SESSION['gallery-weight-input']; ?>" min='0' step='0.01' />kg<br>
-                    <?php
-                    if (isset($_SESSION['galery-image-error']))
-                        echo '<span style="color:red;">' . $_SESSION['galery-image-error'] . "</span><br>";
-                    if (isset($_SESSION['galery-description-error']))
-                        echo '<span style="color:red;">' . $_SESSION['galery-description-error'] . "</span><br>";
-                    if (isset($_SESSION['galery-weight-error']))
-                        echo '<span style="color:red;">' . $_SESSION['galery-weight-error'] . "</span><br>";
-                    ?>
-                    <input type="submit" value="Prześlij">
-                </form>
-            </fieldset>
-        </section>
+        <?php
+        if (isset($_SESSION['userid'])) {
+            echo '<section>' .
+                '<div id="add-image-text">' .
+                '<p>Witaj ' . $_SESSION['username'] . '</p>Podziel się z nami swoimi zdobyczami wypełniając formularz<br> Inni użytkownicy mogą polubić twoje zdjęcia<br>Dla najlepszych łowców czekają niesamowite nagrody' .
+                '</div>' .
+                '<fieldset>' .
+                '<div id="form-description-container">' .
+                'Obrazek:<br>Opis:<br><br><br><br>Waga:<br>' .
+                '</div>' .
+                '<form method="post" action="index.php?state=galery" enctype="multipart/form-data">' .
+                '<input type="file" accept="image/jpeg,image/gif,image/png" name="gallery-image" /><br>' .
+                '<textarea name="gallery-description" rows="5">';
+            if (isset($_SESSION['gallery-description-input'])) echo $_SESSION['gallery-description-input'];
+            echo '</textarea><br>' .
+                '<input type="number" name="gallery-weight" value="';
+            if (isset($_SESSION['gallery-weight-input'])) echo $_SESSION['gallery-weight-input'];
+            echo '" min="0" step="0.01" />kg<br>';
+            if (isset($_SESSION['galery-image-error']))
+                echo '<span style="color:red;">' . $_SESSION['galery-image-error'] . "</span><br>";
+            if (isset($_SESSION['galery-description-error']))
+                echo '<span style="color:red;">' . $_SESSION['galery-description-error'] . "</span><br>";
+            if (isset($_SESSION['galery-weight-error']))
+                echo '<span style="color:red;">' . $_SESSION['galery-weight-error'] . "</span><br>";
+            echo '<input type="submit" value="Prześlij">' .
+                '</form>' .
+                '</fieldset>' .
+                '</section>';
+        }
+        ?>
         <article>
             <?php
             foreach ($_SESSION['gallery_data'] as $item) {
@@ -56,22 +62,22 @@
                     '<img src="' . $item['zdjecie'] . '">' .
                     '<div class="galery-item-overlay">' .
                     $item['opis'] . '<br><br>Waga: ' . $item['waga'] . 'kg<br><br>Polubienia: ' . $item['polubienia'] . '<br>';
-
-                $likedFlag = false;
-                foreach ($_SESSION['likes'] as $row) {
-                    if ($row['userid'] == $_SESSION['userid'] && $row['postid'] == $item['id']) {
-                        $likedFlag = true;
+                if (isset($_SESSION['userid'])) {
+                    $likedFlag = false;
+                    foreach ($_SESSION['likes'] as $row) {
+                        if ($row['userid'] == $_SESSION['userid'] && $row['postid'] == $item['id']) {
+                            $likedFlag = true;
+                        }
+                    }
+                    if (!$likedFlag) {
+                        echo '<br><span style="color:lightblue;"><a href="index.php?state=galery&like=' . $item['id'] . '">Lubie To!' . '</a></span>';
+                    } else {
+                        echo '<br><span style="color:lightgreen;">Już lubisz ten obrazek :)</span>';
                     }
                 }
-                if (!$likedFlag) {
-                    echo '<br><span style="color:lightblue;"><a href="index.php?state=galery&like=' . $item['id'] . '">Lubie To!' . '</a></span>';
-                }
-                else{
-                    echo '<br><span style="color:lightgreen;">Już lubisz ten obrazek :)</span>';
-                }
                 echo
-                    '</div>' .
-                '</div>';
+                '</div>' .
+                    '</div>';
             }
             ?>
         </article>
