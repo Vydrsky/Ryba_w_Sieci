@@ -27,7 +27,7 @@
                 echo "<div id='item-image'> <img src='" . $news->getImage() . "'/> </div>";
                 echo "<div id='item-content'>";
                 echo "<div id='item-title'>" . $news->getTitle() . "</div>";
-                echo "<div id='item-info'>" . $news->getDescription() . "</div>";
+                echo "<div id='item-info'>" . substr($news->getDescription(),0,242) . '...' . "</div>";
                 echo "<div id='item-forwarding'> <a href='index.php?state=concrete_news&id=" . $_SESSION['newsId'][$i] . "'>Czytaj więcej...</a> </div>";
                 echo  "</div>";
                 echo "</div>";
