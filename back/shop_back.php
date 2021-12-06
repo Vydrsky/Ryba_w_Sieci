@@ -1,10 +1,9 @@
 <?php
 $base_query='SELECT id,name,type,prize,image, description FROM produkty_sklep WHERE (0';
-//unset($_SESSION['cart']);
-if(!isset($_SESSION['cart'])){
-$_SESSION['cart']=[];
-}
 if(isset($_GET['bought'])){
+    if(!isset($_SESSION['cart'])){
+        $_SESSION['cart']=[];
+        }
     if(!key_exists($_GET['bought'],$_SESSION['cart'])){
     $_SESSION['cart']+=[$_GET['bought'] => 1];
     }
