@@ -61,29 +61,28 @@ section{
     width: 64%;
     margin-left: -4px;
     vertical-align: top;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
 }
 
 #item #item-description{
+    margin-top: 3%;
     text-align: justify;
-    padding:2%;
     word-wrap:break-word;
+    width: 100%;
 }
 
 #item #item-info{
-    padding:2%;
-    width:46%;
+    width: 100%;
     word-wrap:break-word;
 }
 
 #item #add-to-cart{
-    width:38%;
+    width:16%;
     padding: 2%;
-    margin:4%;
+    margin-top:2%;
     background-color: var(--background-color);
-    text-align: center;
 }
 
 input[type=number]::-webkit-outer-spin-button,      /*usuniecie strzalek z inputu number*/
