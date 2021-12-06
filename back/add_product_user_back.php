@@ -71,17 +71,26 @@ if($_SESSION['permission'] == "user" && $_SERVER['REQUEST_METHOD'] == "POST")
     else
         $_SESSION['errorState'] = 'Należy podać stan produktu!';
 
+    if(!empty($_POST['description']))
+    {
+        $description = $_POST['description'];
+        $descriptionCorrect = true;
+    }
+    else
+        $_SESSION['errorDescription'] = 'Należy wprowadzić opis!';
+
     $prize = $_POST['prize'];
     $age = $_POST['age'];
 
-	if ($imageCorrect && $nameCorrect && $typeCorrect && $stateCorrect) {
-		$createAuctionProduct= $db->prepare('INSERT INTO produkty_aukcje (name, type, state, age,  prize, image, id_autora) VALUES (:name,:type,:state,:age,:prize,:image,:id_autora)');
+	if ($imageCorrect && $nameCorrect && $typeCorrect && $stateCorrect && $descriptionCorrect) {
+		$createAuctionProduct= $db->prepare('INSERT INTO produkty_aukcje (name, type, state, age,  prize, image, description, id_autora) VALUES (:name,:type,:state,:age,:prize,:description,:image,:id_autora)');
         $createAuctionProduct->bindValue(':name', $name);
         $createAuctionProduct->bindValue(':type', $type);
         $createAuctionProduct->bindValue(':state', $state);
         $createAuctionProduct->bindValue(':age', $age);
         $createAuctionProduct->bindValue(':prize', $prize);
         $createAuctionProduct->bindValue(':image', $imageName);
+        $createAuctionProduct->bindValue(':description', $description);
         $createAuctionProduct->bindValue(':id_autora', $idUser);
         $createAuctionProduct->execute();
         header("location: index.php?state=shop");

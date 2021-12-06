@@ -26,7 +26,7 @@ if($_SESSION['permission'] == "admin" && $_SERVER['REQUEST_METHOD'] == "POST")
                 $imageName = $_FILES['image']['name'];
                 $size = $_FILES['image']['size'];
                 $tmpName = $_FILES['image']['tmp_name'];
-                $destination = './images/products/' . $imageName; 
+                $destination = 'images/news/' . $idUser  . sha1(basename($tmpName)) . "." . $extension;  
 
                 if($size <= 0)
                     $_SESSION['errorImage'] = 'Plik jest pusty.';
@@ -61,14 +61,23 @@ if($_SESSION['permission'] == "admin" && $_SERVER['REQUEST_METHOD'] == "POST")
     else
         $_SESSION['errorType'] = 'Należy podać typ produktu!';
 
+    if(!empty($_POST['description']))
+    {
+        $description = $_POST['description'];
+        $descriptionCorrect = true;
+    }
+    else
+        $_SESSION['errorDescription'] = 'Należy wprowadzić opis!';
+
     $prize = $_POST['prize'];
 
-	if ($imageCorrect && $nameCorrect && $typeCorrect ) {
-		$createProduct = $db->prepare('INSERT INTO produkty_sklep (name, type, prize, image, id_autora) VALUES (:name,:type,:prize,:image,:id_autora)');
+	if ($imageCorrect && $nameCorrect && $typeCorrect && $descriptionCorrect) {
+		$createProduct = $db->prepare('INSERT INTO produkty_sklep (name, type, prize, image, description, id_autora) VALUES (:name,:type,:prize,:image,:description,:id_autora)');
         $createProduct->bindValue(':name', $name);
         $createProduct->bindValue(':type', $type);
         $createProduct->bindValue(':prize', $prize);
-        $createProduct->bindValue(':image', $imageName);
+        $createProduct->bindValue(':image', $destination);
+        $createProduct->bindValue(':description', $description);
         $createProduct->bindValue(':id_autora', $idUser);
         $createProduct->execute();
         header("location: index.php?state=shop");

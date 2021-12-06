@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
     <link rel="stylesheet" href="styles/add_news_styles.css" />
-    <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <link rel="stylesheet" href="fontellon/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -20,7 +20,7 @@
         <section>
             <div id="item">
                 <div id="item-title">
-                    Dodanie ogłoszenie
+                    Dodanie ogłoszenia
                 </div>
                 <div id="item-content">
                 <form method="post" action="index.php?state=add_news" enctype="multipart/form-data">

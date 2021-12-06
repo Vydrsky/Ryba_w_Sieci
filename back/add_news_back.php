@@ -4,7 +4,7 @@ unset($_SESSION['errorType']);
 unset($_SESSION['errorName']);
 unset($_SESSION['errorImage']);
 
-if($_SESSION['permission'] == "user" && $_SERVER['REQUEST_METHOD'] == "POST")
+if($_SESSION['permission'] == "admin" && $_SERVER['REQUEST_METHOD'] == "POST")
 {
     require_once "db_connect.php";
 	
@@ -26,7 +26,7 @@ if($_SESSION['permission'] == "user" && $_SERVER['REQUEST_METHOD'] == "POST")
                 $imageName = $_FILES['image']['name'];
                 $size = $_FILES['image']['size'];
                 $tmpName = $_FILES['image']['tmp_name'];
-                $destination = './images/news/' . $imageName; 
+                $destination = 'images/news/' . $idUser  . sha1(basename($tmpName)) . "." . $extension; 
 
                 if($size <= 0)
                     $_SESSION['errorImage'] = 'Plik jest pusty.';
@@ -68,7 +68,7 @@ if($_SESSION['permission'] == "user" && $_SERVER['REQUEST_METHOD'] == "POST")
         $addNews->bindValue(':title', $title);
         $addNews->bindValue(':publication_date', $publicationDate);
         $addNews->bindValue(':description', $description);
-        $addNews->bindValue(':image', $imageName);
+        $addNews->bindValue(':image', $destination);
         $addNews->bindValue(':id_autora', $idUser);
         $addNews->execute();
         header("location: index.php?state=news");

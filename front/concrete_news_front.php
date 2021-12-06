@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
     <link rel="stylesheet" href="styles/concrete_news_styles.css" />
-    <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <link rel="stylesheet" href="fontellon/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -24,7 +24,7 @@
                 
             echo "<div id='item'>";
                 echo "<div id='item-title'>" . $concreteNews->getTitle() . "</div>";
-                echo "<div id='item-image'> <img src='images/news/" . $concreteNews->getImage() . "'/> </div>";
+                echo "<div id='item-image'> <img src='" . $concreteNews->getImage() . "'/> </div>";
                 echo "<div id='autor-info'>Opublikowano " . $concreteNews->getPublicationDate() . " przez " . $_SESSION['authorName'] . "</div>";
                 echo "<div id='item-content'>" . $concreteNews->getDescription(). "</div>";    
             echo "</div>";

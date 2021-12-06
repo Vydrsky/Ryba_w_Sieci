@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
     <link rel="stylesheet" href="styles/cart_styles.css" />
-    <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <link rel="stylesheet" href="fontellon/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -24,7 +24,7 @@
             echo
             "<div id='item'>
                 <div id='item-image'>
-                    <img src='images/products/".$row['image']."' />
+                    <img src='".$row['image']."' />
                 </div>
                 <div id='item-content'>
                     <div id='item-info'>".
@@ -37,7 +37,7 @@
                         </form>
                     </div>
                     <div id='item-prize'>".
-                        $row['prize']*$_SESSION['cart'][$row['id']]
+                        $row['prize']*$_SESSION['cart'][$row['id']]."zł"
                     ."</div>
                     <div id='item-trash'>
                         <a href='index.php?state=start'>  

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
     <link rel="stylesheet" href="styles/add_product_styles.css" />
-    <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <link rel="stylesheet" href="fontellon/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -34,6 +34,8 @@
                     <input type="number" name="age" step="1" min="0" /> </br> </br>
                     Cena </br>
                     <input type="number" name="prize" step="0.01" min="0" /> </br> </br>
+                    Opis </br>
+                    <textarea name="description">Wpisz opis.</textarea> </br> </br>
                     Zdjęcie </br>
                     <input type="file" name="image" accept="image/png, image/jpg, image/jpeg"/> </br> </br> 
                     <input type="submit" value="Dodaj produkt"/>
@@ -41,7 +43,8 @@
                 <?php if(isset($_SESSION['errorName'])){echo $_SESSION['errorName']."</br>";}
                 if(isset($_SESSION['errorType'])){echo $_SESSION['errorType']."</br>";}
                 if(isset($_SESSION['errorImage'])){echo $_SESSION['errorImage']."</br>";}
-                if(isset($_SESSION['errorState'])){echo $_SESSION['errorState']."</br>";} ?>
+                if(isset($_SESSION['errorState'])){echo $_SESSION['errorState']."</br>";} 
+                if(isset($_SESSION['errorDescription'])){echo $_SESSION['errorDescription']."</br>";} ?>
                 </div>
             </div>
         </section>
