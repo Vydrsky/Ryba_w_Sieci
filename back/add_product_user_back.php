@@ -28,7 +28,7 @@ if($_SESSION['permission'] == "user" && $_SERVER['REQUEST_METHOD'] == "POST")
                 $imageName = $_FILES['image']['name'];
                 $size = $_FILES['image']['size'];
                 $tmpName = $_FILES['image']['tmp_name'];
-                $destination = './images/auction_products/' . $imageName; 
+                $destination = 'images/auction_products/' . $idUser  . sha1(basename($tmpName)) . "." . $extension;
 
                 if($size <= 0)
                     $_SESSION['errorImage'] = 'Plik jest pusty.';
@@ -89,7 +89,7 @@ if($_SESSION['permission'] == "user" && $_SERVER['REQUEST_METHOD'] == "POST")
         $createAuctionProduct->bindValue(':state', $state);
         $createAuctionProduct->bindValue(':age', $age);
         $createAuctionProduct->bindValue(':prize', $prize);
-        $createAuctionProduct->bindValue(':image', $imageName);
+        $createAuctionProduct->bindValue(':image', $destination);
         $createAuctionProduct->bindValue(':description', $description);
         $createAuctionProduct->bindValue(':id_autora', $idUser);
         $createAuctionProduct->execute();

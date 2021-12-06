@@ -61,7 +61,7 @@ section{
     width: 64%;
     margin-left: -4px;
     vertical-align: top;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
 }

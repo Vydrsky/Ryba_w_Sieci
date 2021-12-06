@@ -26,7 +26,7 @@ if($_SESSION['permission'] == "admin" && $_SERVER['REQUEST_METHOD'] == "POST")
                 $imageName = $_FILES['image']['name'];
                 $size = $_FILES['image']['size'];
                 $tmpName = $_FILES['image']['tmp_name'];
-                $destination = 'images/news/' . $idUser  . sha1(basename($tmpName)) . "." . $extension;  
+                $destination = 'images/products/' . $idUser  . sha1(basename($tmpName)) . "." . $extension;  
 
                 if($size <= 0)
                     $_SESSION['errorImage'] = 'Plik jest pusty.';
