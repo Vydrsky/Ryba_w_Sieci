@@ -31,8 +31,8 @@
                         $row['name']
                     ."</div>
                     <div id='item-count'>
-                        <form method='post' action=''>
-                            <input type='number' name='selected-count-1' min='1' max='10' value='".$_SESSION['cart'][$row['id']]."' /> </br> 
+                        <form method='post' action='index.php?state=cart&change=".$row['id']."''>
+                            <input type='number' name='selected-count-".$row['id']."' min='1' max='10' value='".$_SESSION['cart'][$row['id']]."' /> </br> 
                             <input type='submit' value='Zmień'/>
                         </form>
                     </div>
@@ -40,7 +40,7 @@
                         $row['prize']*$_SESSION['cart'][$row['id']]."zł"
                     ."</div>
                     <div id='item-trash'>
-                        <a href='index.php?state=start'>  
+                        <a href='index.php?state=cart&del=".$row['id']."'>  
                         <img src='images/trash.png' />
                         </a>
                     </div>                          
@@ -48,8 +48,14 @@
             </div>";
                 }
             }
+            else{
+                echo "<h3>Masz pusty koszyk :C</h3>";
+            }
             ?>
         </section>
+        <a href='index.php?state=cart&buy=1'>  
+            <button>KUP!</button>
+        </a>
     </main>
     <?php
     include "includes/footer.php";
