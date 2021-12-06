@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/zawody_styles.css" />
   <link rel="stylesheet" href="styles/navigation_styles.css" />
-  <link rel="stylesheet" href="fontello/css/fontello.css" />
+  <link rel="stylesheet" href="fontellon/css/fontello.css" />
   <link rel="stylesheet" href="styles/main_styles.css" />
   <link rel="icon" href="favicon.ico" />
   <title>Zawody</title>

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/o_nas_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
-    <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <link rel="stylesheet" href="fontellon/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -35,14 +35,11 @@
 </head>
 
 <body>
-    <?php include "includes/header.php";
-    include "includes/menu.php"; ?>
+    <?php include "includes/header.php"; ?>
+    <?php include "includes/menu.php"; ?>
     <summary>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis quam quis ligula laoreet porta. Phasellus aliquet vel orci a suscipit. Vivamus aliquet, urna vitae dapibus condimentum, velit erat bibendum velit, nec dignissim libero metus et arcu. Nulla ut risus id massa imperdiet venenatis. Fusce hendrerit pretium pulvinar. Quisque sodales tincidunt arcu, ac gravida mauris vehicula sodales. Proin hendrerit egestas tortor nec rhoncus. Etiam sit amet dictum eros. Quisque sed risus id nibh interdum fringilla et et metus. Donec lorem augue, hendrerit nec ligula id, scelerisque placerat elit. Ut at nisi elementum, volutpat metus id, laoreet nunc. Aenean facilisis cursus metus sit amet laoreet. Donec bibendum, lacus non euismod vestibulum, orci velit cursus orci, sed mattis metus turpis eget neque.</p>
-
-    </summary>
-    
- 
+    </summary>   
     
     <main>
         <div id="container">

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
     <link rel="stylesheet" href="styles/news_styles.css" />
-    <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <link rel="stylesheet" href="fontellon/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -24,7 +24,7 @@
                 $news = unserialize($_SESSION['news'][$i]);
 
                 echo "<div id='item'>";
-                echo "<div id='item-image'> <img src='images/news/" . $news->getImage() . "'/> </div>";
+                echo "<div id='item-image'> <img src='" . $news->getImage() . "'/> </div>";
                 echo "<div id='item-content'>";
                 echo "<div id='item-title'>" . $news->getTitle() . "</div>";
                 echo "<div id='item-info'>" . $news->getDescription() . "</div>";

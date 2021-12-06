@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main_styles.css" />
     <link rel="stylesheet" href="styles/navigation_styles.css" />
     <link rel="stylesheet" href="styles/shop_styles.css" />
-    <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <link rel="stylesheet" href="fontellon/css/fontello.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -49,7 +49,7 @@
                 foreach ($_SESSION['itemList'] as $row) {
                     echo "<div id='item'>
                 <div id='item-image'>
-                    <img src='images/products/" . $row['image'] . "' />
+                    <img src='" . $row['image'] . "' />
                 </div>
                 <div id='item-content'>
                     <div id='item-description'><h3>" .

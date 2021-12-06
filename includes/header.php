@@ -17,10 +17,33 @@
             '<div class="header-link">Stwórz Konto</div>'.
         '</a>';        
         }
-        else{
-        echo '<a href="index.php?state=profile">'.
+        elseif($_SESSION['permission'] == 'user'){
+        echo 
+        '<a href="index.php?state=add_product_user">'.
+            '<i class="icon-plus-circled"></i><br>'.
+            'Dodaj aukcję'.
+        '</a>'.
+        '<a href="index.php?state=cart">'.
+            '<i class="icon-basket"></i><br>'.
+            'Mój koszyk'.
+        '</a>'.
+        '<a href="index.php?state=profile">'.
             '<i class="icon-user"></i><br>'.
-            'Mój Profil'.
+            'Mój profil'.
+        '</a>';
+        }
+        else{
+        echo '<a href="index.php?state=add_product_admin">'.
+            '<i class="icon-plus-circled"></i><br>'.
+            'Dodaj produkt'.
+        '</a>'.
+        '<a href="index.php?state=add_news">'.
+            '<i class="icon-news"></i><br>'.
+            'Dodaj ogłoszenie'.
+        '</a>'.
+        '<a href="index.php?state=profile">'.
+            '<i class="icon-user"></i><br>'.
+            'Mój profil'.
         '</a>';
         }
         ?>
