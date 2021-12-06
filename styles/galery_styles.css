@@ -17,6 +17,7 @@ article{
 .galery-item{
     min-width: 20%;
     max-width: 30%;
+    min-height: 30vw;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -40,6 +41,7 @@ article{
     font-size: 2vw;
     font-family: 'Roboto',sans-serif;
     padding:20% 0;
+    overflow-wrap: break-word !important;
 }
 
 .galery-item-overlay:hover{
