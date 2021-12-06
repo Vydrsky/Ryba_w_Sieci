@@ -56,10 +56,9 @@
                         $row['name']
                         . "</h3></div>
                     <div id='item-info'>" .
-                        $row['description'] . "<br/>" . "Cena: " . $row['prize']
+                        $row['description'] . "<br/></br>" . "Cena: " . $row['prize'] . "zł"
                         . "</div>
-                    <a href='index.php?state=shop&bought=" . $row['id'] . "' id='add-to-cart'><div id='add-to-cart'>
-                        Dodaj do Koszyka
+                    <a href='index.php?state=shop&bought=" . $row['id'] . "' id='add-to-cart'><div id='add-to-cart'>Dodaj do Koszyka
                     </div></a>
                 </div>
             </div>";
