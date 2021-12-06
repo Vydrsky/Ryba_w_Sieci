@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 02:24 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Czas generowania: 06 Gru 2021, 20:16
+-- Wersja serwera: 10.4.14-MariaDB
+-- Wersja PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sklep`
+-- Baza danych: `sklep`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galeria_zdobyczy`
+-- Struktura tabeli dla tabeli `galeria_zdobyczy`
 --
 
 CREATE TABLE `galeria_zdobyczy` (
@@ -37,32 +37,40 @@ CREATE TABLE `galeria_zdobyczy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Dumping data for table `galeria_zdobyczy`
+-- Zrzut danych tabeli `galeria_zdobyczy`
 --
 
 INSERT INTO `galeria_zdobyczy` (`id`, `opis`, `waga`, `zdjecie`, `polubienia`, `id_autora`) VALUES
 (1, 'sdfasd', 2, 'images/galery/67137c1653cf6ff51bcebabc4a4f0056687ed28b4.jpg', 3, 6),
-(8, 'GURBA MOTUR', 69.69, 'images/galery/6f0b948c54708da4fdf8d0ddb01bfe0d56166faa9.jpg', 1, 6),
+(8, 'GURBA MOTUR', 69.69, 'images/galery/6f0b948c54708da4fdf8d0ddb01bfe0d56166faa9.jpg', 3, 6),
 (9, 'kremówka dobra', 2137, 'images/galery/6bacae388f94064577e7eb3a739e04a88e4b5501f.png', 3, 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ogloszenia`
+-- Struktura tabeli dla tabeli `ogloszenia`
 --
 
 CREATE TABLE `ogloszenia` (
-  `id` int(11) DEFAULT NULL,
-  `typ` text COLLATE utf8_polish_ci DEFAULT NULL,
-  `data_publikacji` date NOT NULL,
-  `opis` text COLLATE utf8_polish_ci DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `title` text COLLATE utf8_polish_ci DEFAULT NULL,
+  `publication_date` date NOT NULL,
+  `description` text COLLATE utf8_polish_ci DEFAULT NULL,
+  `image` text COLLATE utf8_polish_ci DEFAULT NULL,
   `id_autora` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `ogloszenia`
+--
+
+INSERT INTO `ogloszenia` (`id`, `title`, `publication_date`, `description`, `image`, `id_autora`) VALUES
+(4, 'BLACK FRIDAY!', '2021-12-06', 'Jeśli szukasz butów na wyprawy wędkarskie w sezonie jesień/zima, mamy dla Ciebie coś specjalnego. Koniecznie sprawdź propozycję od Savage Gear: model Performance. To porządne obuwie zaprojektowane z myślą o trudnym terenie. Możesz je zabrać na ryby, ale też do lasu czy nawet w góry!', 'images/news/1c017a62dcf60a25d77175b201f7e39e4d91687f3.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `polubienia`
+-- Struktura tabeli dla tabeli `polubienia`
 --
 
 CREATE TABLE `polubienia` (
@@ -72,19 +80,21 @@ CREATE TABLE `polubienia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `polubienia`
+-- Zrzut danych tabeli `polubienia`
 --
 
 INSERT INTO `polubienia` (`id`, `userid`, `postid`) VALUES
 (7, 6, 8),
 (15, 6, 9),
 (16, 7, 9),
-(17, 7, 8);
+(17, 7, 8),
+(18, 8, 8),
+(19, 1, 8);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produkty_aukcje`
+-- Struktura tabeli dla tabeli `produkty_aukcje`
 --
 
 CREATE TABLE `produkty_aukcje` (
@@ -95,24 +105,25 @@ CREATE TABLE `produkty_aukcje` (
   `age` int(11) NOT NULL,
   `prize` double NOT NULL,
   `image` text COLLATE utf8_polish_ci DEFAULT NULL,
+  `description` text COLLATE utf8_polish_ci DEFAULT NULL,
   `id_autora` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Dumping data for table `produkty_aukcje`
+-- Zrzut danych tabeli `produkty_aukcje`
 --
 
-INSERT INTO `produkty_aukcje` (`id`, `name`, `type`, `state`, `age`, `prize`, `image`, `id_autora`) VALUES
-(19, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', 4),
-(20, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', 4),
-(21, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', 4),
-(25, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', 6),
-(26, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', 6);
+INSERT INTO `produkty_aukcje` (`id`, `name`, `type`, `state`, `age`, `prize`, `image`, `description`, `id_autora`) VALUES
+(19, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 4),
+(20, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 4),
+(21, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 4),
+(25, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 6),
+(26, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produkty_sklep`
+-- Struktura tabeli dla tabeli `produkty_sklep`
 --
 
 CREATE TABLE `produkty_sklep` (
@@ -126,19 +137,17 @@ CREATE TABLE `produkty_sklep` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Dumping data for table `produkty_sklep`
+-- Zrzut danych tabeli `produkty_sklep`
 --
 
 INSERT INTO `produkty_sklep` (`id`, `name`, `type`, `prize`, `image`, `description`, `id_autora`) VALUES
-(1, 'Wędka', 'Na węgorze', 130, 'Baza.png', 'Zwykła wędka, szału nie ma', 3),
-(2, 'Wędka szefa', 'Na karasie', 127.42, 'jpg_318-1831.jpg', 'Najlepsza wędka na karasie.', 3),
-(3, 'xxx', 'x1', 123, 'jpg_318-1831.jpg', 'temptemp', 3),
-(4, 'Wędka', 'x2', 123, 'Baza.png', 'temp', 3);
+(6, 'Wędka na karpie', 'Do połowów na duże sztuki', 450.99, 'images/news/1544828b060204d2d95ebe7cbe24d47c8e6695baa.jpg', '', 1),
+(7, 'Wędka na karasie', 'Na ciężkie okazy', 123.12, 'images/news/15b182391e11a193467400d218d91093950f87fe1.jpg', 'Wpisz opis.Wpisz opis.Wpisz opis.Wpisz opis.Wpisz Wpisz opis.opis.Wpisz opis.', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktura tabeli dla tabeli `users`
 --
 
 CREATE TABLE `users` (
@@ -155,34 +164,52 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Dumping data for table `users`
+-- Zrzut danych tabeli `users`
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `name`, `surname`, `permission`, `points`, `rank`, `profile_image`) VALUES
+(1, 'root', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'root@gmail.com', 'root', 'root', 'admin', 1000, '1', ''),
 (3, 'Jan1', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'halibut@gmail.com', 'Jan', 'Polak', 'user', 10000, 'Sum', ''),
 (4, 'test', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'karas@gmail.com', 'sdfg', 'huasd', 'user', 13, 'Szprot', 'images/galery/bass.jpg'),
 (6, 'Vydrsky', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'szczupak@gmail.com', 'Karol', 'Wydrzyński', 'user', 12323543, 'Sum', 'images/galery/pike.jpg'),
-(7, 'adik', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'ryby123@gmail.com', 'adrian', 'kowalski', 'user', 0, '', '');
+(7, 'adik', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'ryby123@gmail.com', 'adrian', 'kowalski', 'user', 0, '', ''),
+(8, 'luk1', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '123@gmail.com', 'Luk', 'Rac', 'user', 0, '', '');
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Struktura tabeli dla tabeli `zawody`
+--
+
+CREATE TABLE `zawody` (
+  `id` int(11) NOT NULL,
+  `title` text CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL,
+  `date` date NOT NULL,
+  `fishery` text CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL,
+  `start_time` time NOT NULL,
+  `type` text CHARACTER SET utf8 COLLATE utf8_polish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `galeria_zdobyczy`
+-- Indeksy dla tabeli `galeria_zdobyczy`
 --
 ALTER TABLE `galeria_zdobyczy`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fkey_galeria_uzytkownicy` (`id_autora`);
 
 --
--- Indexes for table `ogloszenia`
+-- Indeksy dla tabeli `ogloszenia`
 --
 ALTER TABLE `ogloszenia`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fkey_ogloszenia_uzytkownicy` (`id_autora`);
 
 --
--- Indexes for table `polubienia`
+-- Indeksy dla tabeli `polubienia`
 --
 ALTER TABLE `polubienia`
   ADD PRIMARY KEY (`id`),
@@ -190,23 +217,29 @@ ALTER TABLE `polubienia`
   ADD KEY `fk_postid` (`postid`);
 
 --
--- Indexes for table `produkty_aukcje`
+-- Indeksy dla tabeli `produkty_aukcje`
 --
 ALTER TABLE `produkty_aukcje`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fkey_produkty_uzytkownicy` (`id_autora`);
 
 --
--- Indexes for table `produkty_sklep`
+-- Indeksy dla tabeli `produkty_sklep`
 --
 ALTER TABLE `produkty_sklep`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fkey_produktysklep_uzytkownicy` (`id_autora`);
 
 --
--- Indexes for table `users`
+-- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `zawody`
+--
+ALTER TABLE `zawody`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -214,66 +247,78 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `galeria_zdobyczy`
+-- AUTO_INCREMENT dla tabeli `galeria_zdobyczy`
 --
 ALTER TABLE `galeria_zdobyczy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `polubienia`
+-- AUTO_INCREMENT dla tabeli `ogloszenia`
+--
+ALTER TABLE `ogloszenia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT dla tabeli `polubienia`
 --
 ALTER TABLE `polubienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `produkty_aukcje`
+-- AUTO_INCREMENT dla tabeli `produkty_aukcje`
 --
 ALTER TABLE `produkty_aukcje`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `produkty_sklep`
+-- AUTO_INCREMENT dla tabeli `produkty_sklep`
 --
 ALTER TABLE `produkty_sklep`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT dla tabeli `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT dla tabeli `zawody`
+--
+ALTER TABLE `zawody`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Ograniczenia dla zrzutów tabel
 --
 
 --
--- Constraints for table `galeria_zdobyczy`
+-- Ograniczenia dla tabeli `galeria_zdobyczy`
 --
 ALTER TABLE `galeria_zdobyczy`
   ADD CONSTRAINT `fkey_galeria_uzytkownicy` FOREIGN KEY (`id_autora`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `ogloszenia`
+-- Ograniczenia dla tabeli `ogloszenia`
 --
 ALTER TABLE `ogloszenia`
   ADD CONSTRAINT `fkey_ogloszenia_uzytkownicy` FOREIGN KEY (`id_autora`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `polubienia`
+-- Ograniczenia dla tabeli `polubienia`
 --
 ALTER TABLE `polubienia`
   ADD CONSTRAINT `fk_postid` FOREIGN KEY (`postid`) REFERENCES `galeria_zdobyczy` (`id`),
   ADD CONSTRAINT `fk_userid` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `produkty_aukcje`
+-- Ograniczenia dla tabeli `produkty_aukcje`
 --
 ALTER TABLE `produkty_aukcje`
   ADD CONSTRAINT `fkey_produkty_uzytkownicy` FOREIGN KEY (`id_autora`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `produkty_sklep`
+-- Ograniczenia dla tabeli `produkty_sklep`
 --
 ALTER TABLE `produkty_sklep`
   ADD CONSTRAINT `fkey_produktysklep_uzytkownicy` FOREIGN KEY (`id_autora`) REFERENCES `users` (`id`);
