@@ -1,5 +1,14 @@
 * {
     color: var(--text-color);
+    margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing:unset !important;
+}
+dl, ol, ul {
+    margin-bottom: 0 !important;
 }
 
 #container h1 {
@@ -8,7 +17,10 @@
     text-align: center;
     padding-bottom: 2%;
 }
-
+summary
+{
+    cursor:auto !important;
+}
 #container {
     padding-top: 0;
     margin-top: 0;
