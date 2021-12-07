@@ -22,7 +22,7 @@
 
             for ($i = 0; $i < $_SESSION['newsCount']; $i++) {
                 $news = unserialize($_SESSION['news'][$i]);
-
+                
                 echo "<div id='item'>";
                 echo "<div id='item-image'> <img src='" . $news->getImage() . "'/> </div>";
                 echo "<div id='item-content'>";

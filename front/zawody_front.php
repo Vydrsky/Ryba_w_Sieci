@@ -25,51 +25,31 @@
     <div id="tab">
       <div id="table">
         <h1>Zawody 2021</h1>
-
+        <h2><a href='index.php?state=add_competitions'> Dodaj wydarzenie </a></h2>
+        
         <table>
           <tr>
             <th>Zawody</th>
             <th>Data</th>
             <th>Łowisko</th>
-            <th>Godzina</th>
-            <th>Rodzaj</th>
+            <th>Godzina startu</th>
+            <th>Typ</th>
+            <th>Organizator</th>
           </tr>
-          <tr>
-            <td>
-              <h4>Wędkarski Dzień Dziecka</h4>
-            </td>
-            <td>29.05.2021</td>
-            <td>Łowisko 736 Lin</td>
-            <td>Godz. 08:00 - 08:30</td>
-            <td>Spławik Jedna wędka</td>
-          </tr>
-          <tr>
-            <td>
-              <h4>Mistrzostwa Sekcji Lin( kołyska na 3 zawodników)</h4>
-            </td>
-            <td>30.05.2021</td>
-            <td>Łowisko 736 Lin</td>
-            <td>Godz.07:00 -07:15</td>
-            <td>Spławik Jedna wędka</td>
-          </tr>
-          <tr>
-            <td>
-              <h4>Mistrzostwa Sekcji Lin( kołyska na 3 zawodników)</h4>
-            </td>
-            <td>30.05.2021</td>
-            <td>Łowisko 736 Lin</td>
-            <td>Godz.07:00 -07:15</td>
-            <td>Spławik Jedna wędka</td>
-          </tr>
-          <tr>
-            <td>
-              <h4>Mistrzostwa Sekcji Lin( kołyska na 3 zawodników)</h4>
-            </td>
-            <td>30.05.2021</td>
-            <td>Łowisko 736 Lin</td>
-            <td>Godz.07:00 -07:15</td>
-            <td>Spławik Jedna wędka</td>
-          </tr>
+          <?php
+            for ($i = 0; $i < $_SESSION['competitionsCount']; $i++) {
+                $competition = unserialize($_SESSION['competitions'][$i]);
+                
+                echo "<tr>";
+                echo "<td><h4>" . $competition->getTitle() . "</h4></td>";
+                echo "<td>" . $competition->getDate() . "</td>";
+                echo "<td>" . $competition->getFishery() . "</td>";
+                echo "<td>" . $competition->getStartTime() . "</td>";
+                echo "<td>" . $competition->getType() . "</td>";
+                echo "<td>" . $_SESSION['authorName'][$i] . "</td>";
+                echo "</tr>";
+            }
+          ?>       
         </table>
       </div>
     </div>
