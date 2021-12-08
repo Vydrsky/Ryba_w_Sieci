@@ -85,6 +85,13 @@ section{
     background-color: var(--background-color);
 }
 
+#item #delete-product{
+    width:12%;
+    padding: 2%;
+    margin-top:2%;
+    background-color: var(--background-color);
+}
+
 input[type=number]::-webkit-outer-spin-button,      /*usuniecie strzalek z inputu number*/
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;

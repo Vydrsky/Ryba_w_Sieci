@@ -1,6 +1,7 @@
 <?php
+require_once "db_connect.php";
 $base_query='SELECT id,name,type,prize,image, description FROM produkty_sklep WHERE (0';
-if(isset($_GET['bought'])){
+if(isset($_GET['bought']) && $_SESSION['permission'] == 'user'){
     if(!isset($_SESSION['cart'])){
         $_SESSION['cart']=[];
         }
@@ -10,6 +11,13 @@ if(isset($_GET['bought'])){
     else{
     $_SESSION['cart'][$_GET['bought']]++;
     }
+}
+
+if(isset($_GET['deleted']) && $_SESSION['permission'] == 'admin'){
+    $idDeleted = $_GET['deleted'];
+    $delete_product ="DELETE FROM produkty_sklep WHERE id='$idDeleted'";
+    $deleteQuery = $db->prepare($delete_product);
+    $deleteQuery->execute();
 }
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -76,7 +84,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 else{
     $base_query.="=0)";
 }
-require_once "db_connect.php";
 $query = $db->prepare($base_query);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);

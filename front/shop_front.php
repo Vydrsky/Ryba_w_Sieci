@@ -57,9 +57,13 @@
                         . "</h3></div>
                     <div id='item-info'>" .
                         $row['description'] . "<br/></br>" . "Cena: " . $row['prize'] . "zł"
-                        . "</div>
-                    <a href='index.php?state=shop&bought=" . $row['id'] . "' id='add-to-cart'><div id='add-to-cart'>Dodaj do Koszyka
-                    </div></a>
+                        . "</div>";
+                    if($_SESSION['permission'] == "user")
+                        echo "<a href='index.php?state=shop&bought=" . $row['id'] . "' id='add-to-cart'><div id='add-to-cart'>Dodaj do Koszyka";
+                    elseif($_SESSION['permission'] == "admin")
+                        echo "<a href='index.php?state=shop&deleted=" . $row['id'] . "' id='delete-product'><div id='delete-product'>Usuń przedmiot";
+                    echo
+                    "</div></a>
                 </div>
             </div>";
                 }
