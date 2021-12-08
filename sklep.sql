@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Gru 2021, 21:23
+-- Czas generowania: 08 Gru 2021, 20:50
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.4.9
 
@@ -42,7 +42,7 @@ CREATE TABLE `galeria_zdobyczy` (
 
 INSERT INTO `galeria_zdobyczy` (`id`, `opis`, `waga`, `zdjecie`, `polubienia`, `id_autora`) VALUES
 (1, 'sdfasd', 2, 'images/galery/67137c1653cf6ff51bcebabc4a4f0056687ed28b4.jpg', 4, 6),
-(19, 'sdfadf gdsfgsdjighjdf gjhksdfghjksdfjkhg sdfhkjghjksdfgjbnsdfgjgfgsbjfgnsjbfgnbdngsjfgbjfgnbjfsgb', 22, 'images/galery/6936b6249fa56a3795227fe372f616049aa6d1b13.jpg', 1, 6),
+(19, 'sdfadf gdsfgsdjighjdf gjhksdfghjksdfjkhg sdfhkjghjksdfgjbnsdfgjgfgsbjfgnsjbfgnbdngsjfgbjfgnbjfsgb', 22, 'images/galery/6936b6249fa56a3795227fe372f616049aa6d1b13.jpg', 2, 6),
 (23, 'testtestsetsetsdtsetsetsdtstetset', 11.35, 'images/galery/69d0dbc41fa24d1239c934602940978e423cbcf8f.jpg', 1, 6),
 (24, 'fpagadpfngkdfnafgjnafdgkmjnafgdkjn', 11.35, 'images/galery/6e0538db6fa3c7ab2de62087073c5ce9c5ca806ad.jpg', 0, 6),
 (25, 'tsetsdtsetsetsdtstetset sdopasdfk pajdjnkfgnadfgnafgjnafdgkmjnafgdkjn', 5.76, 'images/galery/6970e1d3399cc837f681377175524e5f5283cf705.jpg', 0, 6);
@@ -89,7 +89,8 @@ CREATE TABLE `polubienia` (
 INSERT INTO `polubienia` (`id`, `userid`, `postid`) VALUES
 (20, 1, 1),
 (21, 6, 19),
-(22, 6, 23);
+(22, 6, 23),
+(23, 8, 19);
 
 -- --------------------------------------------------------
 
@@ -102,7 +103,7 @@ CREATE TABLE `produkty_aukcje` (
   `name` text COLLATE utf8_polish_ci DEFAULT NULL,
   `type` text COLLATE utf8_polish_ci DEFAULT NULL,
   `state` text COLLATE utf8_polish_ci DEFAULT NULL,
-  `age` int(11) NOT NULL,
+  `production_year` int(11) NOT NULL,
   `prize` double NOT NULL,
   `image` text COLLATE utf8_polish_ci DEFAULT NULL,
   `description` text COLLATE utf8_polish_ci DEFAULT NULL,
@@ -113,12 +114,10 @@ CREATE TABLE `produkty_aukcje` (
 -- Zrzut danych tabeli `produkty_aukcje`
 --
 
-INSERT INTO `produkty_aukcje` (`id`, `name`, `type`, `state`, `age`, `prize`, `image`, `description`, `id_autora`) VALUES
-(19, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 4),
-(20, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 4),
-(21, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 4),
-(25, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 6),
-(26, 'na wegorze', 'wędka', 'uzywana', 22, 120, 'none', NULL, 6);
+INSERT INTO `produkty_aukcje` (`id`, `name`, `type`, `state`, `production_year`, `prize`, `image`, `description`, `id_autora`) VALUES
+(27, 'Wędka na karpie', 'Wędka', 'nowy', 2016, 190, 'images/auction_products/81b80f0cbe80a97199f32a4bdd759701e9fc928b6.jpg', 'Idealna wędka na karpie.', 8),
+(28, 'Spodnie rybackie', 'Ubranie', 'używany', 2020, 39.99, 'images/auction_products/8e40662cdf8082f2d16994cc2a7e066598a28b3ed.jpg', 'Używane spodnie wodoodporne w dobrym stanie.', 8),
+(30, 'Wędka na karasie', 'Wędka', 'używany', 2019, 173.49, 'images/auction_products/83b1c9ac4feee4497051581f08150e3c46ed00ff3.jpg', 'Idealna wędka na karasie.', 8);
 
 -- --------------------------------------------------------
 
@@ -153,8 +152,7 @@ INSERT INTO `produkty_sklep` (`id`, `name`, `type`, `prize`, `image`, `descripti
 (17, 'Gumowce rybackie', 'Buty', 95, 'images/products/1f2649f1b2844df99475df803e6753d592c742fd1.jpg', 'Wytrzymałe gumowce rybackie', 1),
 (18, 'Krzesło rybackie', 'Siedzenie', 75, 'images/products/10ce521326b5c274ec1bf5431f663c8fc0d362eec.jpg', 'Rozkładane wodoodporne krzesło rybackie', 1),
 (19, 'Luksusowy namiot Gołębiowski', 'Namiot', 1500, 'images/products/143a57497226e91d06a61e1acb44cbae0ef9545d7.jpg', 'Luksusowy namiot o wielu pomieszczeniach i parkiecie tanecznym', 1),
-(20, 'Torba designerska na ryby', 'Plecak', 950, 'images/products/11b2fbd7e5508be25514c65577a91b80ee5b00bd8.jpg', 'Designerska torba rybacka, idealna na zawody wędkarskie.', 1),
-(21, 'Podbierak zwykły', 'Podbierak', 30, 'images/products/1e5f3a8cf958c93251027a0c060a4cd2bb02a5149.png', 'Zwyczajny podbierak na ryby.', 1);
+(20, 'Torba designerska na ryby', 'Plecak', 950, 'images/products/11b2fbd7e5508be25514c65577a91b80ee5b00bd8.jpg', 'Designerska torba rybacka, idealna na zawody wędkarskie.', 1);
 
 -- --------------------------------------------------------
 
@@ -169,9 +167,9 @@ CREATE TABLE `users` (
   `email` text COLLATE utf8_polish_ci DEFAULT NULL,
   `name` text COLLATE utf8_polish_ci DEFAULT NULL,
   `surname` text COLLATE utf8_polish_ci DEFAULT NULL,
-  `permission` text COLLATE utf8_polish_ci NOT NULL DEFAULT '\'user\'',
+  `permission` text COLLATE utf8_polish_ci NOT NULL DEFAULT 'user',
   `points` int(11) NOT NULL,
-  `rank` text COLLATE utf8_polish_ci NOT NULL,
+  `rank` text COLLATE utf8_polish_ci NOT NULL DEFAULT 'Makrela',
   `profile_image` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
@@ -180,12 +178,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `name`, `surname`, `permission`, `points`, `rank`, `profile_image`) VALUES
-(1, 'root', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'root@gmail.com', 'abc', 'def', 'admin', 1000, '1', ''),
+(1, 'root', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'root@gmail.com', 'abc', 'def', 'admin', 1000, 'Karp', ''),
 (3, 'Jan1', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'halibut@gmail.com', 'Jan', 'Polak', 'user', 10000, 'Sum', ''),
 (4, 'test', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'karas@gmail.com', 'sdfg', 'huasd', 'user', 13, 'Szprot', 'images/galery/bass.jpg'),
 (6, 'Vydrsky', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'szczupak@gmail.com', 'Karol', 'Wydrzyński', 'user', 12323543, 'Sum', 'images/galery/pike.jpg'),
-(7, 'adik', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'ryby123@gmail.com', 'adrian', 'kowalski', 'user', 0, '', ''),
-(8, 'luk1', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '123@gmail.com', 'Luk', 'Rac', 'user', 0, '', '');
+(7, 'adik', '4a18e813942d94ffde4f1695884b6e8fdf321d4d', 'ryby123@gmail.com', 'adrian', 'kowalski', 'user', 0, 'Makrela', ''),
+(8, 'luk1', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '123@gmail.com', 'Luk', 'Rac', 'user', 0, 'Makrela', ''),
+(10, 'jasiu123', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'student@polsl.pl', 'Jan', 'Kowalski', 'user', 0, 'Makrela', '');
 
 -- --------------------------------------------------------
 
@@ -285,13 +284,13 @@ ALTER TABLE `ogloszenia`
 -- AUTO_INCREMENT dla tabeli `polubienia`
 --
 ALTER TABLE `polubienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT dla tabeli `produkty_aukcje`
 --
 ALTER TABLE `produkty_aukcje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT dla tabeli `produkty_sklep`
@@ -303,7 +302,7 @@ ALTER TABLE `produkty_sklep`
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `zawody`
