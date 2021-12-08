@@ -4,22 +4,24 @@ class Offer{
     private $id;
     private $name;
     private $type;
+    private $production_year;
     private $state;
-    private $age;
     private $price;
     private $image;
     private $authorId;
+    private $description;
 
-    public function __construct($id, $authorId, $image, $name, $type, $state, $age, $price)
+    public function __construct($id, $name, $type, $state, $production_year, $price, $image, $description, $authorId)
     {
         $this->id = $id;
-        $this->authorId = $authorId;
-        $this->image = $image;
         $this->name = $name;
         $this->type = $type;
-        $this->state = $state;
-        $this->age = $age;
+        $this->state = $state;       
+        $this->production_year = $production_year;       
         $this->price = $price;
+        $this->image = $image;
+        $this->description = $description;
+        $this->authorId = $authorId;
     }
 
     public function getId()
@@ -50,12 +52,17 @@ class Offer{
     {
         return $this->state;
     }
-    public function getAge()
-    {
-        return $this->age;
-    }
     public function getPrice()
     {
         return $this->price;
     }
+    public function getProductionYear()
+    {
+        return $this->production_year;
+    }
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
 }

@@ -30,8 +30,8 @@
                     <input type="text" name="type" /> </br> </br>
                     Stan </br>
                     <input type="text" name="state" /> </br> </br>
-                    Wiek przedmiotu </br>
-                    <input type="number" name="age" step="1" min="0" /> </br> </br>
+                    Rok produkcji </br>
+                    <input type="number" name="production-year" step="1" min="0" /> </br> </br>
                     Cena </br>
                     <input type="number" name="prize" step="0.01" min="0" /> </br> </br>
                     Opis </br>
