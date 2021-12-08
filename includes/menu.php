@@ -4,10 +4,10 @@
             <li>Sklep</li>
         </a>
         <a href="index.php?state=shop">
-            <li>Wypożyczanie Sprzętu</li>
+            <li>Aukcje użytkowników</li>
         </a>
         <a href="index.php?state=galery">
-            <li>Galeria Użytkowników</li>
+            <li>Galeria</li>
         </a>
         <a href="index.php?state=news">
             <li>Ogłoszenia</li>
