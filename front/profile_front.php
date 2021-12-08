@@ -69,6 +69,7 @@
                     echo $user->getEmail();
                 echo "><br>";
                 echo "<input type='password' name='confirm_password'><br><br>";
+
                 echo '<input type="submit" value="Zmień dane" /><br>';
                 if (isset($_SESSION['new_name_error']))
                     echo "<span style='color:red;'>" . $_SESSION['new_name_error'] . "</span><br>";
@@ -82,7 +83,7 @@
             }
             echo
             '<div id="logout-container">' .
-                '<a href="index.php?state=logout"><button>Wyloguj się</button></a>"' .
+                '<a href="index.php?state=logout"><button>Wyloguj się</button></a>' .
                 '</div>';
             ?>
         </section>
