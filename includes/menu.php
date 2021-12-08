@@ -3,7 +3,7 @@
         <a href="index.php?state=shop">
             <li>Sklep</li>
         </a>
-        <a href="index.php?state=shop">
+        <a href="index.php?state=auctions">
             <li>Aukcje użytkowników</li>
         </a>
         <a href="index.php?state=galery">

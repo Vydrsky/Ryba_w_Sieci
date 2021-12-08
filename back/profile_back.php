@@ -69,14 +69,14 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 $user = new User($result['id'], $result['login'], $result['email'], $result['name'], $result['surname'], $result['permission'], $result['points'], $result['rank'], $result['profile_image']);
 $_SESSION['profile_user_data'] = $user;
 
-$query = $db->prepare("SELECT p.id AS productId,p.name,p.id_autora,p.image,p.type,p.state,p.age,p.prize FROM produkty_aukcje AS p INNER JOIN users AS u ON p.id_autora=u.id WHERE p.id_autora=:id");
+$query = $db->prepare("SELECT p.id AS productId,p.name,p.type,p.state,p.production_year,p.prize,p.image,p.description,p.id_autora FROM produkty_aukcje AS p INNER JOIN users AS u ON p.id_autora=u.id WHERE p.id_autora=:id");
 $query->bindValue(":id", $_SESSION['userid']);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 $i = 0;
 $_SESSION['profile_auction_data'] = array(); //empty the array
 foreach ($result as $row) {
-    $offer = new Offer($row['productId'], $row['id_autora'], $row['image'], $row['name'], $row['type'], $row['state'], $row['age'], $row['prize']);
+    $offer = new Offer($row['productId'], $row['name'], $row['type'], $row['state'], $row['production_year'], $row['prize'], $row['image'], $row['description'], $row['id_autora']);
     $_SESSION['profile_auction_data'][$i] = $offer;
     $i++;
 }

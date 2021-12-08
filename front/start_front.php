@@ -32,10 +32,10 @@
                     <div class="link-description">ZAWODY WĘDKARSKIE</div>
                 </div>
             </a>
-            <a href="https://www.youtube.com/watch?v=qKxfWd79HFI">
+            <a href="index.php?state=auctions">
                 <div class="site-link">
                     <img src="images/borrow-link.jpg" />
-                    <div class="link-description">WYPOŻYCZANIE SPRZĘTU</div>
+                    <div class="link-description">AUKCJE UŻYTKOWNIKÓW</div>
                 </div>
             </a>
             <a href="index.php?state=galery">
