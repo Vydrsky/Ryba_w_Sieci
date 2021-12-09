@@ -22,6 +22,7 @@ if(isset($_GET['deleted']) && $_SESSION['permission'] == 'admin'){
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
     $flag=false;
+    $flagNewOrUsed = false;
     if(isset($_POST['rods-checkbox'])){
         $flag=true;
         $base_query.=" OR type LIKE 'Wędka'";
@@ -77,8 +78,12 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
     if(isset($_POST['new-checkbox'])){
         $base_query.=" AND state='nowy'";
+        $flagNewOrUsed = true;
     }
     if(isset($_POST['used-checkbox'])){
+        if($flagNewOrUsed == true)
+            $base_query.=" OR state='używany'";
+        else
         $base_query.=" AND state='używany'";
     }
     if($_POST['production-year']!=''){

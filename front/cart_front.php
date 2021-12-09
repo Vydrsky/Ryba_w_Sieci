@@ -48,13 +48,46 @@
             </div>";
                 }
             }
-            else{
-                echo "<h3>Masz pusty koszyk :C</h3>";
+            if(isset($_SESSION['cartAuctionsContents'])){
+                $flag1 = true;
+                foreach($_SESSION['cartAuctionsContents'] as $row){
+            echo
+            "<div id='item'>
+                <div id='item-image'>
+                    <img src='".$row['image']."' />
+                </div>
+                <div id='item-content'>
+                    <div id='item-info'>".
+                        $row['name'] . "</br>" .
+                        "Stan: " . $row['state'] . "</br>" . "Rok produkcji: " . $row['production_year']
+                    ."</div>
+                    <div id='item-count'>
+                        <form method='post' action='index.php?state=cart&changeAuction=".$row['id']."''>
+                            <input type='number' name='selected-count-auctions-".$row['id']."' min='1' max='10' value='".$_SESSION['cartAuctions'][$row['id']]."' /> </br> 
+                            <input type='submit' value='Zmień'/>
+                        </form>
+                    </div>
+                    <div id='item-prize'>".
+                        $row['prize']*$_SESSION['cartAuctions'][$row['id']]."zł"
+                    ."</div>
+                    <div id='item-trash'>
+                        <a href='index.php?state=cart&delAuctions=".$row['id']."'>  
+                        <img src='images/trash.png' />
+                        </a>
+                    </div>                          
+                </div>
+            </div>";
+                }
             }
+            if(isset($_SESSION['cartEmpty']))
+                echo $_SESSION['cartEmpty'];
             ?>
         </section>
         <a href='index.php?state=cart&buy=1'>  
-            <button>KUP!</button>
+            <button>KUP wszystko ze sklepu!</button>
+        </a>
+        <a href='index.php?state=cart&buyAuctions=1'>  
+            <button>KUP wszystko z aukcji!</button>
         </a>
     </main>
     <?php
