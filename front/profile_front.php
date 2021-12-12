@@ -98,11 +98,15 @@
                         '<img src="' . $offer->getImage() . '"/>' .
                         "</div>" .
                         "<div class='auction-item-description'>" .
-                        'ghuasdvhjasdfvhjashbjfsdahbvjsdfhbjsdfhjsadfvbadfjhgadfjhgbdafhjgbdafhbjgdhbfjaghbjgdfahbjfdgjgvhdfvhjgvhjhjdfgvavhjdfgavjadfgvhjdfag' .
+                        $offer->getDescription() . '<br><br>Stan: '.$offer->getState().'<br>Typ: '.$offer->getType().'<br>Cena: '.$offer->getPrice().
                         "</div>" .
-                        "<div class='auction-item-description'>" .
-                        '<a href="index.php?state=profile&delete_auction=' . $offer->getId() . '">Usuń Aukcje</a>' .
-                        "</div>" .
+                            "<div class='auction-item-delete-container'>" .
+                                '<a href="index.php?state=profile&delete_auction='.  $offer->getId() . '">'.
+                                '<div class="auction-item-delete">'.
+                                  'Usuń Aukcje'.
+                                '</div>'.
+                                '</a>' .
+                            "</div>" .
                         "</div>";
                 }
                 ?>

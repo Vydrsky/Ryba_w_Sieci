@@ -1,3 +1,8 @@
+main{
+    color:var(--header-color);
+    font-family: 'Roboto',sans-serif;
+}
+
 section{
     display: inline-flex;
     vertical-align: top;
@@ -40,6 +45,7 @@ article h2{
 .auction-item{
     display:inline-flex;
     justify-content: center;
+    align-content: center;
     align-items: stretch;
     flex-wrap: nowrap;
     background-color: var(--light-background-color);
@@ -55,9 +61,21 @@ article h2{
 }
 .auction-item-description{
     width:62%;
-    text-align: justify;
-    
+    text-align: center;
+    align-self: center;
+    padding:2%;
 }
+.auction-item-delete-container{
+    width:30%;
+    padding: 2% 0;
+    text-align: center;
+    align-self: center;
+}
+.auction-item-delete{
+    padding: 1.5vw;
+    background-color: var(--background-color);
+}
+
 
 #edit-form{
     line-height: 2vw;

@@ -44,7 +44,7 @@ class Offer{
         return $this->name;
     }
 
-    public function getSurname()
+    public function getType()
     {
         return $this->type;
     }
