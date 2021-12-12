@@ -53,9 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['edit']) && $_GET['edit'
     }
 }
 
-if(isset($_GET['delete_auction'])){
+if (isset($_GET['delete_auction'])) {
     $query = $db->prepare("DELETE FROM produkty_aukcje WHERE id=:id");
-    $query->bindValue(":id",$_GET['delete_auction']);
+    $query->bindValue(":id", $_GET['delete_auction']);
     $query->execute();
     header("location:index.php?state=profile");
 }
@@ -69,6 +69,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 $user = new User($result['id'], $result['login'], $result['email'], $result['name'], $result['surname'], $result['permission'], $result['points'], $result['rank'], $result['profile_image']);
 $_SESSION['profile_user_data'] = $user;
 
+//wyciaganie danych o aukcjach
 $query = $db->prepare("SELECT p.id AS productId,p.name,p.type,p.state,p.production_year,p.prize,p.image,p.description,p.id_autora FROM produkty_aukcje AS p INNER JOIN users AS u ON p.id_autora=u.id WHERE p.id_autora=:id");
 $query->bindValue(":id", $_SESSION['userid']);
 $query->execute();
@@ -79,4 +80,31 @@ foreach ($result as $row) {
     $offer = new Offer($row['productId'], $row['name'], $row['type'], $row['state'], $row['production_year'], $row['prize'], $row['image'], $row['description'], $row['id_autora']);
     $_SESSION['profile_auction_data'][$i] = $offer;
     $i++;
+}
+
+//wyciaganie danych o zakupach
+$query = $db->prepare("SELECT z.userid,z.offerid,p.name,p.type,p.prize,p.image,p.description,p.id_autora FROM zamowienia z LEFT JOIN produkty_sklep p ON z.offerid = p.id WHERE z.userid=:id");
+$query->bindValue(":id", $_SESSION['userid']);
+$query->execute();
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
+$i = 0;
+$_SESSION['profile_bought_data'] = array(); //empty the array
+foreach ($result as $row) {
+    $offer = new Offer($row['offerid'], $row['name'], $row['type'], NULL, NULL, $row['prize'], $row['image'], $row['description'], $row['id_autora']);
+    $_SESSION['profile_bought_data'][$i] = $offer;
+    $i++;
+}
+
+//wyciaganie danych o obrazkach użytkownika
+$query = $db->prepare("SELECT id,zdjecie,polubienia,id_autora,opis FROM galeria_zdobyczy WHERE id_autora=:id");
+$query->bindValue(":id", $_SESSION['userid']);
+$query->execute();
+
+$_SESSION['profile_image_data'] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+if (isset($_GET['delete_image'])) {
+    $query = $db->prepare("DELETE FROM galeria_zdobyczy WHERE id=:id");
+    $query->bindValue(":id", $_GET['delete_image']);
+    $query->execute();
+    header("location: index.php?state=profile");
 }

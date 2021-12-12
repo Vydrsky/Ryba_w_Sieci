@@ -98,38 +98,49 @@
                         '<img src="' . $offer->getImage() . '"/>' .
                         "</div>" .
                         "<div class='auction-item-description'>" .
-                        'ghuasdvhjasdfvhjashbjfsdahbvjsdfhbjsdfhjsadfvbadfjhgadfjhgbdafhjgbdafhbjgdhbfjaghbjgdfahbjfdgjgvhdfvhjgvhjhjdfgvavhjdfgavjadfgvhjdfag' .
+                        $offer->getDescription() . '<br><br>Stan: '.$offer->getState().'<br>Typ: '.$offer->getType().'<br>Cena: '.$offer->getPrice().
                         "</div>" .
-                        "<div class='auction-item-description'>" .
-                        '<a href="index.php?state=profile&delete_auction=' . $offer->getId() . '">Usuń Aukcje</a>' .
-                        "</div>" .
+                            "<div class='auction-item-delete-container'>" .
+                                '<a href="index.php?state=profile&delete_auction='.  $offer->getId() . '">'.
+                                '<div class="auction-item-delete">'.
+                                  'Usuń Aukcje'.
+                                '</div>'.
+                                '</a>' .
+                            "</div>" .
                         "</div>";
                 }
                 ?>
             </div>
             <h2>Twoje Zamówienia</h2>
             <div id="auction-container">
-                <div class="auction-item">
-                    temp
-                </div>
-                <div class="auction-item">
-                    temp
-                </div>
-                <div class="auction-item">
-                    temp
-                </div>
+            <?php
+            
+                foreach ($_SESSION['profile_bought_data'] as $offer) {
+                    echo
+                    '<div class="auction-item">' .
+                        "<div class='auction-item-image'>" .
+                        '<img src="' . $offer->getImage() . '"/>' .
+                        "</div>" .
+                        "<div class='auction-item-description'>" .
+                        $offer->getDescription().'<br><br>Typ: '.$offer->getType().'<br>Cena: '.$offer->getPrice().
+                        "</div>" .
+                        "</div>";
+                }
+                ?>
             </div>
-            <h2>Konkursy w których uczestniczysz</h2>
-            <div id="auction-container">
-                <div class="auction-item">
-                    temp
-                </div>
-                <div class="auction-item">
-                    temp
-                </div>
-                <div class="auction-item">
-                    temp
-                </div>
+            <h2>Twoje zdjęcia</h2>
+            <div id="profile-image-container">
+                <?php
+                foreach($_SESSION['profile_image_data'] as $row){
+                echo '<div class="profile-image">'.
+                '<img src="' . $row['zdjecie']. '"/>' .
+                '</div>'.
+                '<div class="profile-image-content">'.
+                    $row['opis']."<br><br>Polubienia: ".$row['polubienia']."<br><br>".
+                    '<a href="index.php?state=profile&delete_image='.$row['id'].'">'.'Usuń zdjęcie'.'</a>'.
+               '</div>';
+                }
+                ?>
             </div>
         </article>
     </main>
