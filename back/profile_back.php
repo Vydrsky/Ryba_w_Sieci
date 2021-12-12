@@ -53,9 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['edit']) && $_GET['edit'
     }
 }
 
-if(isset($_GET['delete_auction'])){
+if (isset($_GET['delete_auction'])) {
     $query = $db->prepare("DELETE FROM produkty_aukcje WHERE id=:id");
-    $query->bindValue(":id",$_GET['delete_auction']);
+    $query->bindValue(":id", $_GET['delete_auction']);
     $query->execute();
     header("location:index.php?state=profile");
 }
@@ -96,4 +96,15 @@ foreach ($result as $row) {
 }
 
 //wyciaganie danych o obrazkach użytkownika
+$query = $db->prepare("SELECT id,zdjecie,polubienia,id_autora,opis FROM galeria_zdobyczy WHERE id_autora=:id");
+$query->bindValue(":id", $_SESSION['userid']);
+$query->execute();
 
+$_SESSION['profile_image_data'] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+if (isset($_GET['delete_image'])) {
+    $query = $db->prepare("DELETE FROM galeria_zdobyczy WHERE id=:id");
+    $query->bindValue(":id", $_GET['delete_image']);
+    $query->execute();
+    header("location: index.php?state=profile");
+}

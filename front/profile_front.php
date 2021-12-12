@@ -130,7 +130,17 @@
             </div>
             <h2>Twoje zdjęcia</h2>
             <div id="profile-image-container">
-                
+                <?php
+                foreach($_SESSION['profile_image_data'] as $row){
+                echo '<div class="profile-image">'.
+                '<img src="' . $row['zdjecie']. '"/>' .
+                '</div>'.
+                '<div class="profile-image-content">'.
+                    $row['opis']."<br><br>Polubienia: ".$row['polubienia']."<br><br>".
+                    '<a href="index.php?state=profile&delete_image='.$row['id'].'">'.'Usuń zdjęcie'.'</a>'.
+               '</div>';
+                }
+                ?>
             </div>
         </article>
     </main>

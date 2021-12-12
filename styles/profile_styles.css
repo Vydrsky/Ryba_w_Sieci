@@ -97,3 +97,25 @@ form input{
 #logout-container{
     padding: 0 3vw;
 }
+
+#profile-image-container{
+    display:inline-flex;
+    flex-wrap: wrap;
+    min-height: 300px;
+    background-color: var(--background-color);
+    width:80%;
+    margin:0 10%;
+}
+
+.profile-image{
+    width:36%;
+    padding: 2%;
+}
+.profile-image-content{
+    width:56%;
+    padding: 2%;
+}
+
+.profile-image-content a{
+    color:red;
+}
