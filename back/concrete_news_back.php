@@ -4,7 +4,6 @@ require_once "db_connect.php";
 include_once "classes/News.php";
 
 $concreteNewsId = $_GET['id'];
-$userId = $_SESSION['userid'];
 
 $query = $db->prepare("SELECT * FROM ogloszenia WHERE id='$concreteNewsId'");
 $query->execute();
