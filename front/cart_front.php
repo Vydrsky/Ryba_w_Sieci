@@ -17,6 +17,14 @@
     <?php include "includes/header.php"; ?>
     <?php include "includes/menu.php"; ?>
     <main>
+        <div id='button'>
+            <a href='index.php?state=cart&buy=1'>  
+                <button>KUP wszystko ze sklepu!</button>
+            </a>
+            <a href='index.php?state=cart&buyAuctions=1'>  
+                <button>KUP wszystko z aukcji!</button>
+            </a>
+        </div>
         <section>
             <?php
             if(isset($_SESSION['cartContents'])){
@@ -82,13 +90,7 @@
             if(isset($_SESSION['cartEmpty']))
                 echo $_SESSION['cartEmpty'];
             ?>
-        </section>
-        <a href='index.php?state=cart&buy=1'>  
-            <button>KUP wszystko ze sklepu!</button>
-        </a>
-        <a href='index.php?state=cart&buyAuctions=1'>  
-            <button>KUP wszystko z aukcji!</button>
-        </a>
+        </section>        
     </main>
     <?php
     include "includes/footer.php";
