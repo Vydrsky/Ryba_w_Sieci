@@ -114,7 +114,6 @@
             <h2>Twoje Zamówienia</h2>
             <div id="auction-container">
             <?php
-            
                 foreach ($_SESSION['profile_bought_data'] as $offer) {
                     echo
                     '<div class="auction-item">' .
@@ -122,7 +121,7 @@
                         '<img src="' . $offer->getImage() . '"/>' .
                         "</div>" .
                         "<div class='auction-item-description'>" .
-                        $offer->getDescription().'<br><br>Typ: '.$offer->getType().'<br>Cena: '.$offer->getPrice().
+                        $offer->getDescription() . '<br><br>Typ: '.$offer->getType().'<br><br>Cena: '.$offer->getPrice().
                         "</div>" .
                         "</div>";
                 }

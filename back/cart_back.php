@@ -1,7 +1,9 @@
 <?php
 
+require_once "db_connect.php";
 $emptyCart = false;
 $emptyAuctionsCart = false;
+$idUser = $_SESSION['userid'];
 unset($_SESSION['cartEmpty']);
 
 if(isset($_GET['del'])){
@@ -29,18 +31,24 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     }
 }
 
-if(isset($_GET['buy'])){
+if(isset($_GET['buy']) && isset($_SESSION['cart'])){
+
+    foreach($_SESSION['cart'] as $idItem => $item){
+        $createUser = $db->prepare('INSERT INTO zamowienia (userid,offerid) VALUES (:userid,:offerid)');
+        $createUser->bindValue(':userid',$idUser);
+        $createUser->bindValue(':offerid',$idItem);
+        $createUser->execute();
+    }
     unset($_SESSION['cart']);
     unset($_SESSION['cartContents']);
 }
 
-if(isset($_GET['buyAuctions'])){
+if(isset($_GET['buyAuctions']) && isset($_SESSION['cartAuctions'])){
     unset($_SESSION['cartAuctions']);
     unset($_SESSION['cartAuctionsContents']);
 }
 
 if(isset($_SESSION['cart'])){
-    require_once "db_connect.php";
     $ids="";
     foreach($_SESSION['cart'] as $key => $item){
         $ids.="id=".$key." OR ";
@@ -56,7 +64,6 @@ else
     $emptyCart = true;
 
 if(isset($_SESSION['cartAuctions'])){
-    require_once "db_connect.php";
     $idsA="";
     foreach($_SESSION['cartAuctions'] as $key => $item){
         $idsA.="id=".$key." OR ";
