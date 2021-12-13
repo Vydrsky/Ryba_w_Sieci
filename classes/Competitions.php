@@ -9,14 +9,14 @@ class Competitions
     protected $type;
     protected $idAuthor;
 
-    public function __construct($title, $date, $fishery, $startTime, $type, $idAuthor)
+    public function __construct($title, $date, $fishery, $startTime, $type, $authorName)
     {
         $this->title = $title;
         $this->date = $date;
         $this->fishery = $fishery;
         $this->startTime = $startTime;
         $this->type = $type;
-        $this->idAuthor = $idAuthor;
+        $this->authorName = $authorName;
     }
 
     public function getTitle()
@@ -44,8 +44,8 @@ class Competitions
         return $this->type;
     }
 
-    public function getIdAuthor()
+    public function getAuthorName()
     {
-        return $this->idAuthor;
+        return $this->authorName;
     }
 }

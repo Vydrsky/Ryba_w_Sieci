@@ -37,16 +37,14 @@
             <th>Organizator</th>
           </tr>
           <?php
-            for ($i = 0; $i < $_SESSION['competitionsCount']; $i++) {
-                $competition = unserialize($_SESSION['competitions'][$i]);
-                
+            foreach($_SESSION['competitions'] as $competition) {
                 echo "<tr>";
                 echo "<td><h4>" . $competition->getTitle() . "</h4></td>";
                 echo "<td>" . $competition->getDate() . "</td>";
                 echo "<td>" . $competition->getFishery() . "</td>";
                 echo "<td>" . $competition->getStartTime() . "</td>";
                 echo "<td>" . $competition->getType() . "</td>";
-                echo "<td>" . $_SESSION['authorName'][$i] . "</td>";
+                echo "<td>" . $competition->getAuthorName() . "</td>";
                 echo "</tr>";
             }
           ?>       

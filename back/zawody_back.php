@@ -3,24 +3,13 @@
 require "db_connect.php";
 include "classes/Competitions.php";
 
-$query = $db->prepare('SELECT * FROM zawody');
+$query = $db->prepare('SELECT zawody.id, title, date , fishery, start_time, type, users.name, users.surname FROM zawody INNER JOIN users ON users.id=zawody.id_autora');
 $query->execute();
 $result = $query->fetchALL(PDO::FETCH_ASSOC);
 
-$selectCompetitionsCount = $db->prepare('SELECT COUNT(*) FROM zawody');
-$selectCompetitionsCount->execute();
-$_SESSION['competitionsCount'] = $selectCompetitionsCount->fetchColumn();
-
-$i = 0;
-
+$_SESSION['competitions']=[];
 foreach($result as $row)
 {
-    $competition = new Competitions($row['title'], $row['date'], $row['fishery'], $row['start_time'], $row['type'], $row['id_autora']);
-    $authorId = $row['id_autora'];
-    $selectName = $db->prepare("SELECT name, surname FROM users WHERE id=$authorId");
-    $selectName->execute();
-    $name = $selectName->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['authorName'][$i] = $name['name'] . " " . $name['surname']; 
-    $_SESSION['competitions'][$i] = serialize($competition);
-    $i++;
+    $competition = new Competitions($row['title'], $row['date'], $row['fishery'], $row['start_time'], $row['type'], $row['name']." ".$row['surname']);
+    array_push($_SESSION['competitions'],$competition);
 }
