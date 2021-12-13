@@ -1,7 +1,7 @@
 <?php
 
 require "db_connect.php";
-include "Competitions.php";
+include "classes/Competitions.php";
 
 $query = $db->prepare('SELECT * FROM zawody');
 $query->execute();

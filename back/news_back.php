@@ -1,7 +1,7 @@
 <?php
 
 require "db_connect.php";
-include "News.php";
+include "classes/News.php";
 
 $query = $db->prepare('SELECT * FROM ogloszenia');
 $query->execute();

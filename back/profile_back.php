@@ -6,8 +6,8 @@ if (!isset($_SESSION['name']) || !isset($_SESSION['userid'])) {
 }
 
 
-require_once "User.php";
-require_once "Offer.php";
+require_once "classes/User.php";
+require_once "classes/Offer.php";
 require "db_connect.php";
 
 
