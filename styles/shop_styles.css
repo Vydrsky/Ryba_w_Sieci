@@ -107,3 +107,10 @@ input[type=submit]{
     width: 10vw;
     height: 2vw;
 }
+
+#no-results{
+    padding: 10%;
+    font-size: 50px;
+    color: var(--header-color);
+    margin: auto auto;
+}

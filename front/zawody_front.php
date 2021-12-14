@@ -39,7 +39,7 @@
           <?php
             foreach($_SESSION['competitions'] as $competition) {
                 echo "<tr>";
-                echo "<td><h4>" . $competition->getTitle() . "</h4></td>";
+                echo "<td>" . $competition->getTitle() . "</td>";
                 echo "<td>" . $competition->getDate() . "</td>";
                 echo "<td>" . $competition->getFishery() . "</td>";
                 echo "<td>" . $competition->getStartTime() . "</td>";

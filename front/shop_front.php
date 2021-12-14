@@ -65,8 +65,8 @@
                     <input type="number" name="min-cost" min="0" max="999999" <?php if (isset($_POST['min-cost'])) {
                                                                                     echo "value='" . $_POST['min-cost'] . "'";
                                                                                 } ?> /> - <input type="number" name="max-cost" min="0" max="999999" <?php if (isset($_POST['max-cost'])) {
-                                                                                                                                                                                                                                echo "value='" . $_POST['max-cost'] . "'";
-                                                                                                                                                                                                                            } ?> /><br>
+                                                                                                                                                        echo "value='" . $_POST['max-cost'] . "'";
+                                                                                                                                                    } ?> /><br>
                     <input type="submit" value="Potwierdź" />
                 </form>
             </div>
@@ -96,6 +96,10 @@
                     "</div></a>
                 </div>
             </div>";
+                }
+                if (isset($_SESSION['empty-filter'])) {
+                    echo "<div id='no-results'>Brak Wyników :(</div>";
+                    unset($_SESSION['empty-filter']);
                 }
             }
             ?>

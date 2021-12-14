@@ -108,6 +108,10 @@
                 </div>
             </div>";
                 }
+                if (isset($_SESSION['empty-filter'])) {
+                    echo "<div id='no-results'>Brak Wyników :(</div>";
+                    unset($_SESSION['empty-filter']);
+                }
             }
             ?>
         </section>

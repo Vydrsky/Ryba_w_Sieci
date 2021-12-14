@@ -103,3 +103,7 @@ $query = $db->prepare($base_query);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 $_SESSION['itemAuctionsList']=$result;
+
+if($query->rowCount()==0){
+    $_SESSION['empty-filter'] = true;
+}

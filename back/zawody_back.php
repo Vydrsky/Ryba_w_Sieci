@@ -3,7 +3,7 @@
 require "db_connect.php";
 include "classes/Competitions.php";
 
-$query = $db->prepare('SELECT zawody.id, title, date , fishery, start_time, type, users.name, users.surname FROM zawody INNER JOIN users ON users.id=zawody.id_autora');
+$query = $db->prepare('SELECT zawody.id, title, date , fishery, start_time, type, users.name, users.surname FROM zawody INNER JOIN users ON users.id=zawody.id_autora ORDER BY zawody.id DESC');
 $query->execute();
 $result = $query->fetchALL(PDO::FETCH_ASSOC);
 

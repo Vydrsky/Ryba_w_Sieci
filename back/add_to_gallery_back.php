@@ -64,3 +64,8 @@ if($_SESSION['permission'] == "user" && $_SERVER['REQUEST_METHOD'] == "POST")
         header("location: index.php?state=galery");
 	}
 }
+
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_GET['edit'])){
+    $query = $db->prepare("UPDATE zawody SET title=:title,date=:date,fishery=:fishery,start_time=:start_time,type=:type WHERE id=:id");
+    $query->bindValue(":id" $_POST['edit-id']);
+}

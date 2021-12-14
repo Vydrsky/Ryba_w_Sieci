@@ -40,6 +40,26 @@
                 if(isset($_SESSION['errorFishery'])){echo $_SESSION['errorFishery']."</br>";}
                 if(isset($_SESSION['errorType'])){echo $_SESSION['errorType']."</br>";} ?>
                 </div>
+                <div id="item-content">
+                <div id="item-title">
+                    Edycja zawodów
+                </div> 
+                <form method="post" action="index.php?state=add_competitions&edit=1">
+                    ID zawodów</br>
+                    <input type="text" name="edit-id"> </br> </br>
+                    Tytuł</br>
+                    <input type="text" name="edit-title"> </br> </br>
+                    Data <br />
+                    <input type="date" name="edit-date" required> <br /><br />
+                    Łowisko </br>
+                    <input type="text" name="edit-fishery"> </br> </br> 
+                    Godzina startu </br>
+                    <input type="time" name="edit-start_time" required > </br> </br>
+                    Typ </br>
+                    <input type="text" name="edit-type"> </br> </br> 
+                    <input type="submit" value="Edytuj zawody"/>
+                </form>
+                </div>
             </div>
         </section>
     </main>

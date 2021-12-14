@@ -26,5 +26,14 @@ table {
 }
 
 th, td {
-    border: 0.3rem solid black;   
+    border: 0.3rem solid black;
+    width:10%; 
+    padding:1%;  
+}
+
+th{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+    padding:2%;
 }

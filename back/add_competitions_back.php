@@ -4,7 +4,7 @@ unset($_SESSION['errorTitle']);
 unset($_SESSION['errorFishery']);
 unset($_SESSION['errorType']);
 
-if($_SESSION['permission'] == "admin" && $_SERVER['REQUEST_METHOD'] == "POST")
+if($_SESSION['permission'] == "admin" && $_SERVER['REQUEST_METHOD'] == "POST" && !isset($_GET['edit']))
 {
     require_once "db_connect.php";
 	
@@ -51,6 +51,26 @@ if($_SESSION['permission'] == "admin" && $_SERVER['REQUEST_METHOD'] == "POST")
         $createProduct->execute();
         header("location: index.php?state=zawody");
 	}
+}
+
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_GET['edit'])){
+
+    require_once "db_connect.php";
+    $id = $_POST['edit-id'];
+    $title = $_POST['edit-title'];
+    $date = $_POST['edit-date'];
+    $fishery = $_POST['edit-fishery'];
+    $start_time = $_POST['edit-start_time'];
+    $type = $_POST['edit-type'];
+
+    $query = $db->prepare("UPDATE zawody SET title=:title,date=:date,fishery=:fishery,start_time=:start_time,type=:type WHERE id=:id");
+    $query->bindValue(":id", $id);
+    $query->bindValue(':title', $title);
+    $query->bindValue(':date', $date);
+    $query->bindValue(':fishery', $fishery);
+    $query->bindValue(':start_time', $start_time);
+    $query->bindValue(':type', $type);
+    $query->execute();
 }
 
     
