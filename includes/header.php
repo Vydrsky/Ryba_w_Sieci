@@ -23,8 +23,8 @@
             '<i class="icon-plus-circled"></i><br>'.
             'Dodaj aukcję'.
         '</a>'.
-        '<a href="index.php?state=cart">'.
-            '<i class="icon-basket"></i><br>'.
+        '<a href="index.php?state=cart"'; if(isset($_SESSION['cart'])){echo 'style="color:black"';} echo '>'.
+            '<i class="icon-basket"'; if(isset($_SESSION['cart'])){echo 'style="filter:invert(100%)"';} echo '></i><br>'.
             'Mój koszyk'.
         '</a>'.
         '<a href="index.php?state=profile">'.

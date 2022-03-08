@@ -24,7 +24,7 @@
                 <div id="item-content">
                     <form method="post" action="" enctype="multipart/form-data">
                         Login </br>
-                        <input type="text" name="name" value=<?php if (isset($_SESSION['inputName'])) echo $_SESSION['inputName']; ?>> <br /> </br>
+                        <input type="text" name="name" > <br /> </br>
                         Hasło </br>
                         <input type="password" name="pass"><br />
                         <input type="submit" class="btn" value="zaloguj" />

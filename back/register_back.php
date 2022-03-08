@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $createUser->bindValue(':name',$_POST['name']);
         $createUser->bindValue(':surname',$_POST['surname']);
         $createUser->execute();
-        header("location: index.php?state=login");
+        header("location: index.php?state=success");
 	}
 
 }
